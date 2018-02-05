@@ -1,7 +1,7 @@
-import { GrammarDefinition } from './grammarDefinition';
+// import { GrammarDefinition } from './grammarDefinition';
 
-export class Registry {
-    private registry: Map<string, GrammarDefinition> = new Map();
+// export class Registry {
+//     private registry: Map<string, GrammarDefinition> = new Map();
 
-    constructor(private resolveScope: (scopeName: string) => Promise<GrammarDefinition>) {}
-}
+//     constructor(private resolveScope: (scopeName: string) => Promise<GrammarDefinition>) {}
+// }
