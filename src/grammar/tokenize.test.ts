@@ -14,6 +14,9 @@ describe('Validate Tokenizer', () => {
 
     it('tests tokenizeLine Javascript', () => {
         const lines = sampleJavascript.split('\n');
+        const rule = sampleJavascriptGrammarRule;
+        expect(lines).to.be.not.empty;
+        expect(rule).to.be.not.empty;
         // const r = tokenizeLine(lines[1], sampleJavascriptGrammarRule);
         // console.log(r);
     });
