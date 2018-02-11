@@ -1,8 +1,9 @@
 import { GrammarDefinition, Pattern, RegexOrString } from './grammarDefinition';
 import { isPatternInclude, isPatternMatch, isPatternBeginEnd, scope, captures } from './pattern';
 import * as XRegExp from 'xregexp';
+import { escapeMatch, MatchOffsetResult } from './regexpUtil';
 
-const maxDepth = 10;
+const maxDepth = 100;
 
 export interface TokenizeLineResult {
     tokens: Token[];
@@ -56,12 +57,21 @@ export function matchRule(text: string, offset: number, rule: Rule): MatchResult
     }
     if ( isPatternMatch(pattern) ) {
         const regex = regExpOrStringToRegExp(pattern.match);
-        return { match: XRegExp.exec(text, regex, offset), rule };
+        try {
+            return { match: XRegExp.exec(text, regex, offset), rule };
+        } catch (e) {
+            console.log(e);
+            return { rule };
+        }
     }
     if ( isPatternBeginEnd(pattern) ) {
-        const regex = regExpOrStringToRegExp(pattern.begin);
-        const match = XRegExp.exec(text, regex, offset);
-        return { match, rule };
+        try {
+            const regex = regExpOrStringToRegExp(pattern.begin);
+            return { match: XRegExp.exec(text, regex, offset), rule };
+        } catch (e) {
+            console.log(e);
+            return { rule };
+        }
     }
 
     const candidates = pattern.patterns
@@ -75,7 +85,7 @@ export function matchRule(text: string, offset: number, rule: Rule): MatchResult
         if (!a.match) {
             return b;
         }
-        return (a.match.index < b.match.index) ? a : b;
+        return (a.match.index <= b.match.index) ? a : b;
     }, { rule });
 }
 
@@ -105,8 +115,14 @@ export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
                 };
                 end = rule.end;
             }
-            endMatch = end ? XRegExp.exec(text, end, offset) : undefined;
-            endOffset = endMatch ? endMatch.index : text.length;
+            try {
+                endMatch = end ? XRegExp.exec(text, end, offset) : undefined;
+                endOffset = endMatch ? endMatch.index : text.length;
+            } catch (e) {
+                console.log(e);
+                endMatch = undefined;
+                endOffset = text.length;
+            }
         }  else {
             tokens.push({ startIndex: offset, endIndex: endOffset, scopes: extractScopes(rule) });
             offset = endOffset;
@@ -122,8 +138,14 @@ export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
                 while (rule.parent && !isPatternBeginEnd(rule.pattern)) {
                     rule = rule.parent!;
                 }
-                endMatch = rule.end ? XRegExp.exec(text, rule.end, offset) : undefined;
-                endOffset = endMatch ? endMatch.index : text.length;
+                try {
+                    endMatch = rule.end ? XRegExp.exec(text, rule.end, offset) : undefined;
+                    endOffset = endMatch ? endMatch.index : text.length;
+                } catch (e) {
+                    console.log(e);
+                    endMatch = undefined;
+                    endOffset = text.length;
+                }
             }
         }
     }
@@ -135,10 +157,15 @@ export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
 }
 
 function regExpOrStringToRegExp(regex: RegexOrString): RegExp {
-    if (typeof regex === 'string') {
-        return XRegExp(regex, 'x');
+    try {
+        if (typeof regex === 'string') {
+            return XRegExp(regex);
+        }
+        return XRegExp(regex);
+    } catch (e) {
+        console.log(e);
+        return /.^/;
     }
-    return XRegExp(regex);
 }
 
 function buildEndRegEx(regex: RegexOrString, match: RegExpExecArray): RegExp | undefined {
@@ -146,7 +173,13 @@ function buildEndRegEx(regex: RegexOrString, match: RegExpExecArray): RegExp | u
         return undefined;
     }
     if (typeof regex === 'string') {
-        return XRegExp.build(regex, match, 'x');
+        const subs = escapeMatch(match);
+        try {
+            return XRegExp.build(regex, subs);
+        } catch (e) {
+            console.log(e);
+            return /.^/;
+        }
     }
     return regex;
 }
@@ -175,6 +208,7 @@ function tokenizeCapture(rule: Rule, match: RegExpExecArray): Token[] {
     const tokens: Token[] = [];
 
     if (cap) {
+        // const offsets = matchesToOffsets(match);
         const cc = new Map(Object.entries(cap));
         let q = 0;
         let p = q;
@@ -205,4 +239,22 @@ function tokenizeCapture(rule: Rule, match: RegExpExecArray): Token[] {
         tokens.push({ startIndex, endIndex, scopes });
     }
     return tokens;
+}
+
+export interface CapturedSpans {
+    captureGroup: string;
+    begin: number;
+    end: number;
+}
+
+export function pairCaptureGroupsToMatchOffsets(captureGroups: string[], match: MatchOffsetResult): CapturedSpans[] {
+    const result: CapturedSpans[] = [];
+    const foundMatches = captureGroups
+        .filter(g => match.has(g))
+        .map(captureGroup => ({ ...match.get(captureGroup)!, captureGroup }))
+        .sort((a, b) => a.begin - b.begin || b.end - a.end);
+    for (const group of foundMatches) {
+        result.push(group);
+    }
+    return result;
 }
