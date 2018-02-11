@@ -2,8 +2,28 @@ import { expect } from 'chai';
 import { GrammarDefinition } from './grammarDefinition';
 import * as path from 'path';
 import { Rule, tokenizeLine } from './tokenize';
+// import * as XRegExp from 'xregexp';
 
 describe('Validate Tokenizer', () => {
+
+
+    it('tests tokenizeLine Javascript', () => {
+        const lines = sampleJavascript.split('\n');
+        let rule = sampleJavascriptGrammarRule;
+        expect(lines).to.be.not.empty;
+        for (const line of lines) {
+            console.log(line);
+            const r = tokenizeLine(line, rule);
+            r.tokens.forEach(t => {
+                const text = JSON.stringify(line.slice(t.startIndex, t.endIndex));
+                const scope = t.scopes.join(', ');
+                console.log(`${text} => ${scope}`);
+            });
+            rule = r.state;
+        }
+        expect(true).to.be.true;
+    });
+
     it('tests tokenizeLine sampleFakeGrammar', () => {
         const rule = grammarToRule(sampleFakeGrammar);
         const r = tokenizeLine(`const x = 'it\\'s good'; // comment`, rule);
@@ -12,14 +32,6 @@ describe('Validate Tokenizer', () => {
         expect(r.tokens).to.have.length(8);
     });
 
-    it('tests tokenizeLine Javascript', () => {
-        const lines = sampleJavascript.split('\n');
-        const rule = sampleJavascriptGrammarRule;
-        expect(lines).to.be.not.empty;
-        expect(rule).to.be.not.empty;
-        // const r = tokenizeLine(lines[1], sampleJavascriptGrammarRule);
-        // console.log(r);
-    });
 });
 
 const sampleJavascriptGrammarRule = loadSampleJavascriptGrammar();

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --harmony_regexp_lookbehind
 
 import * as path from 'path';
 import * as program from 'commander';
