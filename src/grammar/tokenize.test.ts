@@ -1,11 +1,35 @@
 import { expect } from 'chai';
 import { GrammarDefinition } from './grammarDefinition';
 import * as path from 'path';
-import { Rule, tokenizeLine } from './tokenize';
-// import * as XRegExp from 'xregexp';
+import { Rule, tokenizeLine, pairCaptureGroupsToMatchOffsets } from './tokenize';
+import * as XRegExp from 'xregexp';
+import { matchesToOffsets } from './regexpUtil';
 
 describe('Validate Tokenizer', () => {
 
+    it('tests pairCaptureGroupsToMatchOffsets', () => {
+        const t = '0 one two three. four 5';
+        const m = XRegExp.exec(t, XRegExp('(one).*(two\\s+(three).)\\s+four(?= (\\d))'), 2);
+        const mOffsets = matchesToOffsets(m);
+        const captureGroups = ['0'];
+        const r = pairCaptureGroupsToMatchOffsets(captureGroups, mOffsets);
+        expect(r).to.not.be.undefined;
+        expect(r.map(r => r.captureGroups)).to.be.deep.equal([['0']]);
+        expect(r.map(r => r.begin)).to.be.deep.equal([2]);
+        expect(r.map(r => r.end)).to.be.deep.equal([21]);
+    });
+
+    it('tests pairCaptureGroupsToMatchOffsets', () => {
+        const t = '0 one two three. four 5';
+        const m = XRegExp.exec(t, XRegExp('(one).*(two\\s+(three).)\\s+four(?= (\\d))'), 2);
+        const mOffsets = matchesToOffsets(m);
+        const captureGroups = ['0', '1', '2', '3', '4'];
+        const r = pairCaptureGroupsToMatchOffsets(captureGroups, mOffsets);
+        expect(r).to.not.be.undefined;
+        expect(r.map(r => r.captureGroups)).to.be.deep.equal([['0', '1'], ['0'], ['0', '2'], ['0', '2', '3'], ['0', '2'], ['0'], ['4']]);
+        expect(r.map(r => r.begin)).to.be.deep.equal([2, 5, 6, 10, 15, 16, 22]);
+        expect(r.map(r => r.end)).to.be.deep.equal([5, 6, 10, 15, 16, 21, 23]);
+    });
 
     it('tests tokenizeLine Javascript', () => {
         const lines = sampleJavascript.split('\n');
@@ -29,7 +53,7 @@ describe('Validate Tokenizer', () => {
         const r = tokenizeLine(`const x = 'it\\'s good'; // comment`, rule);
         console.log(r);
         // fix sub matches can push out the end of parent matches.
-        expect(r.tokens).to.have.length(8);
+        expect(r.tokens).to.have.length(9);
     });
 
 });

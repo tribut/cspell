@@ -81,6 +81,7 @@ export function matchesToOffsets(match: RegExpExecArray): MatchOffsetResult {
     const skip = new Set(['input', 'index']);
     for (let i = 0; i < match.length; ++i) {
         const s = match[i];
+        if (s === undefined) { continue; }
         let begin = text.indexOf(s, offset);
         if (begin < 0) {
             begin = text.lastIndexOf(s, offset);

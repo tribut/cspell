@@ -1,7 +1,7 @@
-import { GrammarDefinition, Pattern, RegexOrString } from './grammarDefinition';
-import { isPatternInclude, isPatternMatch, isPatternBeginEnd, scope, captures } from './pattern';
+import { GrammarDefinition, Pattern, RegexOrString, Capture } from './grammarDefinition';
+import { isPatternInclude, isPatternMatch, isPatternBeginEnd, scope, captures, endCaptures } from './pattern';
 import * as XRegExp from 'xregexp';
-import { escapeMatch, MatchOffsetResult } from './regexpUtil';
+import { escapeMatch, MatchOffsetResult, matchesToOffsets } from './regexpUtil';
 
 const maxDepth = 100;
 
@@ -74,19 +74,22 @@ export function matchRule(text: string, offset: number, rule: Rule): MatchResult
         }
     }
 
-    const candidates = pattern.patterns
-        .map(pattern => matchRule(text, offset, { grammarDef, pattern, parent: rule, depth: depth + 1, scope: scope(pattern) }))
-        .filter(m => !!m.match);
-
-    return candidates.reduce((a, b) => {
-        if (!b.match) {
-            return a;
+    let best: MatchResult | undefined;
+    for (const pat of pattern.patterns) {
+        const m = matchRule(text, offset, { grammarDef, pattern: pat, parent: rule, depth: depth + 1, scope: scope(pat) });
+        if (!best) {
+            best = m;
         }
-        if (!a.match) {
-            return b;
+        if (m.match) {
+            if (m.match.index === offset) {
+                return m;
+            }
+            if (!best.match || m.match.index < best.match.index) {
+                best = m;
+            }
         }
-        return (a.match.index <= b.match.index) ? a : b;
-    }, { rule });
+    }
+    return best!;
 }
 
 export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
@@ -101,7 +104,7 @@ export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
             if (match.index > offset) {
                 tokens.push({ startIndex: offset, endIndex: match.index, scopes: extractScopes(rule) });
             }
-            tokens.push(...tokenizeCapture(matchingRule, match));
+            tokens.push(...tokenizeCapture(matchingRule, match, captures(matchingRule.pattern)));
             offset = match.index + match[0].length;
             const pattern = matchingRule.pattern;
             if (isPatternBeginEnd(pattern)) {
@@ -114,39 +117,38 @@ export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
                     end: buildEndRegEx(pattern.end, match),
                 };
                 end = rule.end;
-            }
-            try {
-                endMatch = end ? XRegExp.exec(text, end, offset) : undefined;
-                endOffset = endMatch ? endMatch.index : text.length;
-            } catch (e) {
-                console.log(e);
-                endMatch = undefined;
-                endOffset = text.length;
-            }
-        }  else {
-            tokens.push({ startIndex: offset, endIndex: endOffset, scopes: extractScopes(rule) });
-            offset = endOffset;
-            if (endOffset !== text.length) {
-                do {
-                    rule = rule.parent!;
-                } while (!isPatternBeginEnd(rule.pattern));
-                if (endMatch) {
-                    tokens.push(...tokenizeCapture(rule, endMatch));
-                    offset = endMatch.index + endMatch[0].length;
-                    rule = rule.parent!;
-                }
-                while (rule.parent && !isPatternBeginEnd(rule.pattern)) {
-                    rule = rule.parent!;
-                }
                 try {
-                    endMatch = rule.end ? XRegExp.exec(text, rule.end, offset) : undefined;
+                    endMatch = end ? XRegExp.exec(text, end, offset) : undefined;
                     endOffset = endMatch ? endMatch.index : text.length;
                 } catch (e) {
                     console.log(e);
                     endMatch = undefined;
                     endOffset = text.length;
                 }
+                continue;
             }
+        }  else {
+            if (offset < endOffset) {
+                tokens.push({ startIndex: offset, endIndex: endOffset, scopes: extractScopes(rule) });
+            }
+            offset = endOffset;
+        }
+        if (offset === endOffset) {
+            if (rule.parent && endMatch) {
+                rule = findBoundingRule(rule);
+                tokens.push(...tokenizeCapture(rule, endMatch, endCaptures(rule.pattern)));
+                offset = endMatch.index + endMatch[0].length;
+            }
+        }
+        rule = findEndRule(rule);
+        end = rule.end;
+        try {
+            endMatch = end ? XRegExp.exec(text, end, offset) : undefined;
+            endOffset = endMatch ? endMatch.index : text.length;
+        } catch (e) {
+            console.log(e);
+            endMatch = undefined;
+            endOffset = text.length;
         }
     }
 
@@ -154,6 +156,20 @@ export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
         tokens,
         state: rule,
     };
+}
+
+function findBoundingRule(rule: Rule): Rule {
+    while (rule.parent && !isPatternBeginEnd(rule.pattern)) {
+        rule = rule.parent!;
+    }
+    return rule;
+}
+
+function findEndRule(rule: Rule): Rule {
+    while (rule.parent && !rule.end) {
+        rule = rule.parent;
+    }
+    return rule;
 }
 
 function regExpOrStringToRegExp(regex: RegexOrString): RegExp {
@@ -199,8 +215,7 @@ function extractScopes(rule: Rule): string[] {
     return values.reverse();
 }
 
-function tokenizeCapture(rule: Rule, match: RegExpExecArray): Token[] {
-    const cap = captures(rule.pattern);
+function tokenizeCapture(rule: Rule, match: RegExpExecArray, cap: Capture | undefined): Token[] {
     const scopes = extractScopes(rule);
     let startIndex = match.index;
     const endIndex = startIndex + match[0].length;
@@ -208,31 +223,24 @@ function tokenizeCapture(rule: Rule, match: RegExpExecArray): Token[] {
     const tokens: Token[] = [];
 
     if (cap) {
-        // const offsets = matchesToOffsets(match);
-        const cc = new Map(Object.entries(cap));
-        let q = 0;
-        let p = q;
-        const m0 = match[0];
-        for (const [k, s] of Object.entries(match!)) {
-            if (k === 'index' || k === 'input') { continue; }
-            const n = m0.indexOf(s, p);
-            if (n < 0 || n < p) { continue; }
-            const f = n + s.length;
+        const captures = pairCaptureGroupsToMatchOffsets([...Object.keys(cap)], matchesToOffsets(match));
 
-            const c = cc.get(k);
-            if (c) {
-                if (n > q) {
-                    tokens.push({ startIndex: startIndex + q, endIndex: startIndex + n, scopes });
-                }
-                tokens.push({ startIndex: startIndex + n, endIndex: startIndex + f, scopes: scopes.concat([c.name])});
-                q = f;
+        const capturedTokens: Token[] = captures.map(g => ({
+            startIndex: g.begin,
+            endIndex: g.end,
+            scopes: g.captureGroups
+                .filter(v => !!cap[v])
+                .map(v => cap[v].name.split(/\s+/))
+                .reduce((a, b) => a.concat(b), scopes)
+        }));
+
+        for (const token of capturedTokens) {
+            if (startIndex < token.startIndex) {
+                tokens.push({ startIndex, endIndex: token.startIndex, scopes });
             }
-            p = f;
+            tokens.push(token);
+            startIndex = token.endIndex;
         }
-        if (q < m0.length) {
-            tokens.push({ startIndex: startIndex + q, endIndex: startIndex + m0.length, scopes });
-        }
-        startIndex += m0.length;
     }
 
     if (startIndex < endIndex) {
@@ -241,20 +249,52 @@ function tokenizeCapture(rule: Rule, match: RegExpExecArray): Token[] {
     return tokens;
 }
 
-export interface CapturedSpans {
-    captureGroup: string;
+export interface CapturedSpan {
+    captureGroups: string[];
     begin: number;
     end: number;
 }
 
-export function pairCaptureGroupsToMatchOffsets(captureGroups: string[], match: MatchOffsetResult): CapturedSpans[] {
-    const result: CapturedSpans[] = [];
-    const foundMatches = captureGroups
+export function pairCaptureGroupsToMatchOffsets(captureGroups: string[], match: MatchOffsetResult): CapturedSpan[] {
+    let result: CapturedSpan[] = [];
+    const sortedGroups = captureGroups
         .filter(g => match.has(g))
         .map(captureGroup => ({ ...match.get(captureGroup)!, captureGroup }))
         .sort((a, b) => a.begin - b.begin || b.end - a.end);
-    for (const group of foundMatches) {
-        result.push(group);
+
+    const foundMatches: CapturedSpan[] = sortedGroups.map(g => {
+        return {
+            ...g,
+            captureGroups: sortedGroups.filter(sg => sg.end >= g.end && sg.begin <= g.begin).map(sg => sg.captureGroup),
+        };
+    });
+
+    let src: CapturedSpan[] = [];
+    for (let group of foundMatches) {
+        src = result;
+
+        // back up to find the right position
+        let p = src.length;
+        while (p > 0 && src[p - 1].end >= group.begin) {
+            p -= 1;
+        }
+
+        result = src.slice(0, p);
+
+        // fix up rolling forwards
+        // It is possible to remove multiple entries or add one entry.
+        for (const active of src.slice(p)) {
+            const toAdd = [
+                {...active, end: group.begin }, // before
+                group, // middle
+            ].filter(a => a.begin < a.end);
+            result.push(...toAdd);
+            group = {...active, begin: group.end };
+        }
+
+        if (group.begin < group.end) {
+            result.push(group);
+        }
     }
     return result;
 }
