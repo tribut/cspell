@@ -89,7 +89,13 @@ export function matchRule(text: string, offset: number, rule: Rule): MatchResult
             }
         }
     }
-    return best!;
+    if (!best) {
+        best = {
+            match: undefined,
+            rule
+        };
+    }
+    return best;
 }
 
 export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
