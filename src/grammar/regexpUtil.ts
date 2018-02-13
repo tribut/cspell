@@ -4,7 +4,7 @@ init();
 
 function init() {
     // Add POSIX character classes like [[:alpha:]] (ASCII-only)
-
+    // cspell:ignore alnum cntrl punct xdigit
     const posix: { [index: string]: string } = {
         alnum: 'A-Za-z0-9',
         alpha: 'A-Za-z',
