@@ -68,6 +68,7 @@ function run(name) {
 }
 `;
 
+// cspell:ignore qstring
 const sampleFakeGrammar: GrammarDefinition = {
     name: 'Sample Grammar',
     fileTypes: ['js'],
@@ -113,65 +114,65 @@ const sampleFakeGrammar: GrammarDefinition = {
             match: '(//).*$\\n?',
             name: 'comment.line.double-slash.js'
         },
-        'string': {
-            'patterns': [
+        string: {
+            patterns: [
                 {
-                    'include': '#qstring-single'
+                    include: '#qstring-single'
                 },
                 {
-                    'include': '#qstring-double'
+                    include: '#qstring-double'
                 }
             ]
         },
         'qstring-double': {
-            'name': 'string.quoted.double.js',
-            'begin': '"',
-            'beginCaptures': {
+            name: 'string.quoted.double.js',
+            begin: '"',
+            beginCaptures: {
                 '0': {
-                    'name': 'punctuation.definition.string.begin.js'
+                    name: 'punctuation.definition.string.begin.js'
                 }
             },
-            'end': '(")|((?:[^\\\\\\n])$)',
-            'endCaptures': {
+            end: '(")|((?:[^\\\\\\n])$)',
+            endCaptures: {
                 '1': {
-                    'name': 'punctuation.definition.string.end.js'
+                    name: 'punctuation.definition.string.end.js'
                 },
                 '2': {
-                    'name': 'invalid.illegal.newline.js'
+                    name: 'invalid.illegal.newline.js'
                 }
             },
-            'patterns': [
+            patterns: [
                 {
-                    'include': '#string-character-escape'
+                    include: '#string-character-escape'
                 }
             ]
         },
         'qstring-single': {
-            'name': 'string.quoted.single.js',
-            'begin': "'",
-            'beginCaptures': {
+            name: 'string.quoted.single.js',
+            begin: "'",
+            beginCaptures: {
                 '0': {
-                    'name': 'punctuation.definition.string.begin.js'
+                    name: 'punctuation.definition.string.begin.js'
                 }
             },
-            'end': "(\\')|((?:[^\\\\\\n])$)",
-            'endCaptures': {
+            end: "(\\')|((?:[^\\\\\\n])$)",
+            endCaptures: {
                 '1': {
-                    'name': 'punctuation.definition.string.end.js'
+                    name: 'punctuation.definition.string.end.js'
                 },
                 '2': {
-                    'name': 'invalid.illegal.newline.js'
+                    name: 'invalid.illegal.newline.js'
                 }
             },
-            'patterns': [
+            patterns: [
                 {
-                    'include': '#string-character-escape'
+                    include: '#string-character-escape'
                 }
             ]
         },
         'string-character-escape': {
-            'name': 'constant.character.escape.js',
-            'match': '\\\\(x[0-9A-Fa-f]{2}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)'
+            name: 'constant.character.escape.js',
+            match: '\\\\(x[0-9A-Fa-f]{2}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)'
         },
     },
 };
