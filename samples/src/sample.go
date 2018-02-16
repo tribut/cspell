@@ -2,41 +2,41 @@ package main
 
 import "fmt"
 
-type I interface {
-	M()
+type IMethod interface {
+	Method()
 }
 
-type T struct {
-	S string
+type TStruct struct {
+	Sample string
 }
 
-func (t *T) M() {
+func (t *TStruct) Method() {
 	if t == nil {
 		fmt.Println("<nil>")
 		return
 	}
-	fmt.Println(t.S)
+	fmt.Println(t.Sample)
 }
 
 func main() {
-	var i I
+	var i IMethod
 
-	var t *T
+	var t *TStruct
 	i = t
 	describe(i)
-	i.M()
+	i.Method()
 
-	i = &T{"hello"}
+	i = &TStruct{"hello"}
 	describe(i)
 	longname(i)
-	i.M()
+	i.Method()
 }
 
-func describe(i I) {
+func describe(i IMethod) {
 	fmt.Printf("(%v, %T)\n", i, i)
 }
 
-func longname(i I) {
+func longname(i IMethod) {
 	fmt.Printf("(%v, %T)\n", i, i)
 }
 

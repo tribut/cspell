@@ -1,10 +1,11 @@
 import {
+    Capture,
     Pattern,
     PatternBeginEnd,
     PatternInclude,
     PatternMatch,
+    PatternName,
     PatternPatterns,
-    Capture,
 } from './grammarDefinition';
 
 export function isPatternInclude(pattern: Pattern): pattern is PatternInclude {
@@ -25,6 +26,15 @@ export function isPatternBeginEnd(pattern: Pattern): pattern is PatternBeginEnd 
 export function isPatternPatterns(pattern: Pattern): pattern is PatternPatterns {
     const { patterns = undefined } = pattern as PatternPatterns;
     return patterns !== undefined;
+}
+
+export function isPatternName(pattern: Pattern): pattern is PatternName {
+    const { name = undefined } = pattern as PatternName;
+    return name !== undefined
+        && !isPatternMatch(pattern)
+        && !isPatternBeginEnd(pattern)
+        && !isPatternInclude(pattern)
+        && !isPatternPatterns(pattern);
 }
 
 export function scope(pattern: Pattern): string | undefined {

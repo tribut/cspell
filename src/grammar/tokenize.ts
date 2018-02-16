@@ -1,5 +1,5 @@
-import { GrammarDefinition, Pattern, RegexOrString, Capture } from './grammarDefinition';
-import { isPatternInclude, isPatternMatch, isPatternBeginEnd, scope, captures, endCaptures } from './pattern';
+import { GrammarDefinition, Pattern, RegexOrString, Capture, PatternName } from './grammarDefinition';
+import { isPatternInclude, isPatternMatch, isPatternBeginEnd, scope, captures, endCaptures, isPatternName } from './pattern';
 import * as XRegExp from 'xregexp';
 import { escapeMatch, MatchOffsetResult, matchesToOffsets } from './regexpUtil';
 
@@ -56,9 +56,9 @@ export function matchRule(text: string, offset: number, rule: Rule): MatchResult
         return { rule }; // Unsupported include, match nothing.
     }
     if ( isPatternMatch(pattern) ) {
-        const regex = regExpOrStringToRegExp(pattern.match);
+        const { regex, sticky } = regExpOrStringToRegExp(pattern.match);
         try {
-            return { match: XRegExp.exec(text, regex, offset), rule };
+            return { match: XRegExp.exec(text, regex, offset, sticky), rule };
         } catch (e) {
             console.log(e);
             return { rule };
@@ -66,12 +66,15 @@ export function matchRule(text: string, offset: number, rule: Rule): MatchResult
     }
     if ( isPatternBeginEnd(pattern) ) {
         try {
-            const regex = regExpOrStringToRegExp(pattern.begin);
-            return { match: XRegExp.exec(text, regex, offset), rule };
+            const { regex, sticky } = regExpOrStringToRegExp(pattern.begin);
+            return { match: XRegExp.exec(text, regex, offset, sticky), rule };
         } catch (e) {
             console.log(e);
             return { rule };
         }
+    }
+    if ( isPatternName(pattern) ) {
+        return { match: XRegExp.exec(text, /.*/, offset, false), rule };
     }
 
     let best: MatchResult | undefined;
@@ -106,7 +109,7 @@ export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
     let endOffset = endMatch ? endMatch.index : text.length;
     while (offset < text.length) {
         const { match, rule: matchingRule } = matchRule(text, offset, rule);
-        if (match && match.index < endOffset) {
+        if (match && match.index <= endOffset) {
             if (match.index > offset) {
                 tokens.push({ startIndex: offset, endIndex: match.index, scopes: extractScopes(rule) });
             }
@@ -178,15 +181,21 @@ function findEndRule(rule: Rule): Rule {
     return rule;
 }
 
-function regExpOrStringToRegExp(regex: RegexOrString): RegExp {
+const matchSlashG = /^\\G/;
+const matchNegSlashG = '(?!\\G)';
+
+function regExpOrStringToRegExp(regex: RegexOrString): { regex: RegExp, sticky?: boolean } {
     try {
         if (typeof regex === 'string') {
-            return XRegExp(regex);
+            if (matchSlashG.test(regex)) {
+                return { regex: XRegExp(regex.replace(matchSlashG, '')), sticky: true };
+            }
+            return { regex: XRegExp(regex) };
         }
-        return XRegExp(regex);
+        return { regex: XRegExp(regex) };
     } catch (e) {
         console.log(e);
-        return /.^/;
+        return { regex: /.^/ };
     }
 }
 
@@ -197,6 +206,9 @@ function buildEndRegEx(regex: RegexOrString, match: RegExpExecArray): RegExp | u
     if (typeof regex === 'string') {
         const subs = escapeMatch(match);
         try {
+            if (regex.startsWith(matchNegSlashG)) {
+                regex = '(?<=.|^)|$';
+            }
             return XRegExp.build(regex, subs);
         } catch (e) {
             console.log(e);
@@ -212,8 +224,10 @@ function extractScopes(rule: Rule): string[] {
     let r: Rule | undefined = rule;
 
     while (r) {
-        if (r.scope) {
-            values.push(r.scope);
+        const { name = undefined } = r.pattern as PatternName;
+        const scope = r.scope || name || undefined;
+        if (scope) {
+            values.push(...scope.split(' '));
         }
         r = r.parent;
     }
@@ -229,16 +243,32 @@ function tokenizeCapture(rule: Rule, match: RegExpExecArray, cap: Capture | unde
     const tokens: Token[] = [];
 
     if (cap) {
+        const text = match.input;
         const captures = pairCaptureGroupsToMatchOffsets([...Object.keys(cap)], matchesToOffsets(match));
 
-        const capturedTokens: Token[] = captures.map(g => ({
-            startIndex: g.begin,
-            endIndex: g.end,
-            scopes: g.captureGroups
-                .filter(v => !!cap[v])
-                .map(v => cap[v].name.split(/\s+/))
-                .reduce((a, b) => a.concat(b), scopes)
-        }));
+        const capturedTokens = captures.map(g => {
+            const patterns = g.captureGroups.filter(v => !!cap[v]).map(v => cap[v]);
+            const capturedScopes = patterns
+                .filter(isPatternName)
+                .map(p => p.name.split(' '))
+                .reduce((a, b) => a.concat(b), scopes);
+            if (!patterns.length) { return []; }
+            const pattern = patterns[patterns.length - 1];
+            if (isPatternName(pattern)) {
+                return [{
+                    startIndex: g.begin,
+                    endIndex: g.end,
+                    scopes: capturedScopes,
+                }];
+            }
+            return tokenizeLine(text.slice(g.begin, g.end), {
+                parent: undefined,
+                pattern,
+                grammarDef: rule.grammarDef,
+                depth: 0,
+                scope: capturedScopes.join(' '),
+            }).tokens.map(t => ({...t, startIndex: t.startIndex + g.begin, endIndex: t.endIndex + g.begin}));
+        }).reduce((a, b) => a.concat(b), []);
 
         for (const token of capturedTokens) {
             if (startIndex < token.startIndex) {

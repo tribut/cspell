@@ -2,19 +2,35 @@ import { Grammar } from './grammar';
 import { expect } from 'chai';
 import * as path from 'path';
 import * as fs from 'fs-extra';
+import chalk, { Chalk } from 'chalk';
 
+const javascriptGrammarFile = path.join(__dirname, '..', '..', 'samples', 'syntax', 'javascript.tmLanguage.json');
+const sampleJavascriptFile = path.join(__dirname, '..', '..', 'samples', 'src', 'sample.js');
+
+const golangGrammarFile = path.join(__dirname, '..', '..', 'samples', 'syntax', 'go.tmLanguage.json');
+const sampleGolangFile = path.join(__dirname, '..', '..', 'samples', 'src', 'sample.go');
 
 describe('Validate Grammar', () => {
     it('tests creating a Grammar from a file', async () => {
-        const filename = path.join(__dirname, '..', '..', 'samples', 'syntax', 'javascript.tmlangauge.json');
+        const filename = javascriptGrammarFile;
         const grammar = await Grammar.createFromFile(filename);
         expect(grammar).instanceof(Grammar);
     });
 
-    it('tests tokenizing a file', async () => {
-        const filename = path.join(__dirname, '..', '..', 'samples', 'syntax', 'javascript.tmlangauge.json');
+    it('', async () => {
+        const filename = golangGrammarFile;
         const grammar = await Grammar.createFromFile(filename);
-        const sampleFile = path.join(__dirname, '..', '..', 'samples', 'src', 'sample.js');
+        const sampleFile = sampleGolangFile;
+        const file = await fs.readFile(sampleFile, 'utf8');
+        for (const s of formatTokenizeText(file, grammar)) {
+            console.log(s);
+        }
+    });
+
+    it('tests tokenizing a javascript file', async () => {
+        const filename = javascriptGrammarFile;
+        const grammar = await Grammar.createFromFile(filename);
+        const sampleFile = sampleJavascriptFile;
         const file = await fs.readFile(sampleFile, 'utf8');
         const tokenizer = grammar.tokenizer();
         for (const line of file.split('\n')) {
@@ -29,4 +45,38 @@ describe('Validate Grammar', () => {
             expect(last).to.be.eq(line.length);
         }
     });
+
 });
+
+type ColorMap = [RegExp, Chalk][];
+
+const colorMap: ColorMap = [
+    [/keyword/, chalk.green],
+    [/entity.name/, chalk.blue],
+    [/comment/, chalk.dim.green],
+    [/punctuation/, chalk.yellow],
+    [/support.function/, chalk.greenBright],
+    [/^source.go$/, chalk.gray]
+];
+
+function colorize(text: string, scopes: string): string {
+    for (const [reg, fn] of colorMap) {
+        if (reg.test(scopes)) {
+            return fn(text);
+        }
+    }
+    return text;
+}
+
+function *formatTokenizeText(text: string, grammar: Grammar) {
+    for (const tr of grammar.tokenizeText(text.split('\n'))) {
+        const {line, lineNumber, tokens} = tr;
+        yield `${lineNumber} ${line}`;
+        const results = tokens.map(t => ({ text: line.slice(t.startIndex, t.endIndex), scopes: t.scopes.join(' ')}));
+        const w = Math.max(...results.map(t => t.text.length));
+        for (const {text, scopes} of results) {
+            yield `  ${colorize(text.padEnd(w + 2), scopes)} => ${scopes}`;
+        }
+        yield '';
+    }
+}
