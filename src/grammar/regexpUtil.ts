@@ -3,7 +3,7 @@ import * as XRegExp from 'xregexp';
 init();
 
 function init() {
-    // Add POSIX character classes like [[:alpha:]] (ASCII-only)
+        // Add POSIX character classes like [[:alpha:]] (ASCII-only)
     // cspell:ignore alnum cntrl punct xdigit
     const posix: { [index: string]: string } = {
         alnum: 'A-Za-z0-9',
@@ -42,6 +42,10 @@ function init() {
     XRegExp.addToken(
         /\\[AZz]/,
         (s) => beginEndTokens[s[0]]
+    );
+    XRegExp.addToken(
+        /\(\?>/,
+        () => '(?:'
     );
 }
 

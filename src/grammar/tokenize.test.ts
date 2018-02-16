@@ -179,7 +179,7 @@ const sampleFakeGrammar: GrammarDefinition = {
 
 
 function loadSampleJavascriptGrammar(): Rule {
-    const filenameGrammarJavascript = path.join(__dirname, '..', '..', 'samples', 'syntax', 'javascript.tmlangauge.json');
+    const filenameGrammarJavascript = path.join(__dirname, '..', '..', 'samples', 'syntax', 'javascript.tmLanguage.json');
     const grammarJavascript = require(filenameGrammarJavascript) as GrammarDefinition;
 
     return grammarToRule(grammarJavascript);
