@@ -6,6 +6,12 @@ export interface Tokenizer {
     tokenize(line: string): Token[];
 }
 
+export interface TokenizeTextResult {
+    line: string;
+    tokens: Token[];
+    lineNumber: number;
+}
+
 export class Grammar {
     constructor(private grammarDef: GrammarDefinition) {}
 
@@ -19,6 +25,16 @@ export class Grammar {
                 return r.tokens;
             }
         };
+    }
+
+    *tokenizeText(input: Iterable<string>): IterableIterator<TokenizeTextResult> {
+        const tokenizer = this.tokenizer();
+        let lineNumber = 0;
+        for (const line of input) {
+            lineNumber += 1;
+            const tokens = tokenizer.tokenize(line);
+            yield { line, lineNumber, tokens };
+        }
     }
 
     static async createFromFile(filename: string): Promise<Grammar> {

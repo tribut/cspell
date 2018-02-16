@@ -7,10 +7,10 @@ export interface GrammarDefinition {
     repository?: Repository;
 }
 
-export type Pattern = PatternMatch | PatternBeginEnd | PatternInclude | PatternPatterns;
+export type Pattern = PatternMatch | PatternBeginEnd | PatternInclude | PatternPatterns | PatternName;
 
 export interface PatternMatch {
-    name: string;
+    name?: string;
     comment?: string;
     match: RegexOrString;
     captures?: Capture;
@@ -45,11 +45,15 @@ export interface PatternPatterns {
     scopeName?: string;
 }
 
+export interface PatternName {
+    name: string;
+}
+
 export type RegexOrString = RegExp | string;
 
 export interface Capture {
-    [index: string]: { name: string };
-    [index: number]: { name: string };
+    [index: string]: Pattern;
+    [index: number]: Pattern;
 }
 
 export interface Repository {
