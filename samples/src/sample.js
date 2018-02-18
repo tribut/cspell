@@ -1,12 +1,18 @@
-#!/usr/bin/env node --harmony_regexp_lookbehind
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+
 const path = require("path");
 const program = require("commander");
 const npmPackage = require(path.join(__dirname, '..', 'package.json'));
 const application_1 = require("./application");
 const App = require("./application");
 const chalk_1 = require("chalk");
+
+const param = {
+    one: 55,
+    two: 66,
+    4: 'four',
+};
+
 // interface InitOptions extends Options {}
 function issueEmitter(issue) {
     const { uri = '', row, col, text } = issue;
@@ -105,21 +111,7 @@ program
     }
     process.exit(0);
 });
-/*
-program
-    .command('init')
-    .description('(Alpha) Initialize a cspell.json file.')
-    .option('-o, --output <cspell.json>', 'define where to write file.')
-    .option('--extends <cspell.json>', 'extend an existing cspell.json file.')
-    .action((options: InitOptions) => {
-        showHelp = false;
-        CSpellApplication.createInit(options).then(
-            () => process.exit(0),
-            () => process.exit(1)
-        );
-        console.log('Init');
-    });
-*/
+
 program.parse(process.argv);
 if (showHelp) {
     program.help();

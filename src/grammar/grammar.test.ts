@@ -17,7 +17,7 @@ describe('Validate Grammar', () => {
         expect(grammar).instanceof(Grammar);
     });
 
-    it('', async () => {
+    it('test tokenizing a GO file', async () => {
         const filename = golangGrammarFile;
         const grammar = await Grammar.createFromFile(filename);
         const sampleFile = sampleGolangFile;
@@ -44,6 +44,9 @@ describe('Validate Grammar', () => {
             }
             expect(last).to.be.eq(line.length);
         }
+        for (const s of formatTokenizeText(file, grammar)) {
+            console.log(s);
+        }
     });
 
 });
@@ -51,12 +54,14 @@ describe('Validate Grammar', () => {
 type ColorMap = [RegExp, Chalk][];
 
 const colorMap: ColorMap = [
-    [/keyword/, chalk.green],
-    [/entity.name/, chalk.blue],
+    [/ keyword/, chalk.yellow],
+    [/ entity.name/, chalk.blue],
+    [/ variable/, chalk.greenBright],
+    [/ string/, chalk.yellowBright],
     [/comment/, chalk.dim.green],
-    [/punctuation/, chalk.yellow],
+    [/ punctuation/, chalk.yellow],
     [/support.function/, chalk.greenBright],
-    [/^source.go$/, chalk.gray]
+    [/^source$/, chalk.gray]
 ];
 
 function colorize(text: string, scopes: string): string {
@@ -70,7 +75,8 @@ function colorize(text: string, scopes: string): string {
 
 function *formatTokenizeText(text: string, grammar: Grammar) {
     for (const tr of grammar.tokenizeText(text.split('\n'))) {
-        const {line, lineNumber, tokens} = tr;
+        const {line: rawLine, lineNumber, tokens} = tr;
+        const line = rawLine.replace(/\t/g, ' ');
         yield `${lineNumber} ${line}`;
         const results = tokens.map(t => ({ text: line.slice(t.startIndex, t.endIndex), scopes: t.scopes.join(' ')}));
         const w = Math.max(...results.map(t => t.text.length));
