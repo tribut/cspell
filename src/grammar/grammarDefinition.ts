@@ -9,14 +9,14 @@ export interface GrammarDefinition {
 
 export type Pattern = PatternMatch | PatternBeginEnd | PatternInclude | PatternPatterns | PatternName;
 
-export interface PatternMatch {
+export interface PatternMatch extends PatternBase {
     name?: string;
     comment?: string;
     match: RegexOrString;
     captures?: Capture;
 }
 
-export interface PatternBeginEnd {
+export interface PatternBeginEnd extends PatternBase {
     name: string;
     comment?: string;
     begin: RegexOrString;
@@ -28,7 +28,7 @@ export interface PatternBeginEnd {
     patterns?: Pattern[];
 }
 
-export interface PatternInclude {
+export interface PatternInclude extends PatternBase {
     /**
      * Include a named pattern or grammar
      * Example: "#comment" -- include the "comment" pattern from the repository.
@@ -39,14 +39,19 @@ export interface PatternInclude {
     comment?: string;
 }
 
-export interface PatternPatterns {
+export interface PatternPatterns extends PatternBase {
     patterns: Pattern[];
     comment?: string;
     scopeName?: string;
 }
 
-export interface PatternName {
+export interface PatternName extends PatternBase {
     name: string;
+}
+
+export interface PatternBase {
+    name?: string;
+    comment?: string;
 }
 
 export type RegexOrString = RegExp | string;
