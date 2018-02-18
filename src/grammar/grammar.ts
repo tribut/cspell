@@ -1,5 +1,5 @@
 import { GrammarDefinition } from './grammarDefinition';
-import { Token, tokenizeLine, Rule } from './tokenize';
+import { Token, tokenizeLine, grammarToRule } from './tokenize';
 import * as fs from 'fs-extra';
 
 export interface Tokenizer {
@@ -44,14 +44,3 @@ export class Grammar {
     }
 }
 
-function grammarToRule(grammar: GrammarDefinition): Rule {
-    const rule: Rule = {
-        parent: undefined,
-        pattern: grammar,
-        scope: grammar.scopeName,
-        grammarDef: grammar,
-        depth: 0,
-    };
-
-    return rule;
-}
