@@ -49,9 +49,6 @@ export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
     while (offset < text.length) {
         const { match, rule: matchingRule } = matchRule(text, offset, rule);
         if (match && match.index <= endOffset) {
-            if (matchingRule.comment) {
-                console.log(matchingRule.comment);
-            }
             if (match.index > offset) {
                 tokens.push({ startIndex: offset, endIndex: match.index, scopes: extractScopes(rule) });
             }
@@ -101,13 +98,8 @@ export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
             }
             if (offset === endOffset) {
                 // process ending rule.
-                console.log(`End of match: ${rule.comment} EndRegEx: ${endMatch}`);
                 if (rule.parent && endMatch) {
                     rule = findBoundingRule(rule);
-                    if (isPatternBeginEnd(rule.pattern)) {
-                        const pattern = rule.pattern;
-                        console.log(`End ${rule.depth}:  ${pattern.begin} <--> ${pattern.end} # ` + (pattern.name || pattern.comment || ''));
-                    }
                     tokens.push(...tokenizeCapture(rule, endMatch, endCaptures(rule.pattern)));
                     offset = endMatch.index + endMatch[0].length;
                 }

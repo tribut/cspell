@@ -143,7 +143,7 @@ describe('Validate Tokenizer', () => {
         const text = `const x = 'it\\'s good'; // comment`;
         const r = tokenizeLine(text, rule);
         const tokens = r.tokens;
-        console.log(r);
+        // console.log(r);
         let startIndex = 0;
         for (const t of tokens) {
             expect(t.startIndex).to.equal(startIndex);
@@ -171,16 +171,12 @@ describe('Validate Tokenizer', () => {
         let rule = sampleJavascriptGrammarRule;
         expect(lines).to.be.not.empty;
         for (const line of lines) {
-            console.log(line);
             const r = tokenizeLine(line, rule);
-            r.tokens.forEach(t => {
-                const text = JSON.stringify(line.slice(t.startIndex, t.endIndex));
-                const scope = t.scopes.join(', ');
-                console.log(`${text} => ${scope}`);
-            });
+            if (line !== '') {
+                expect(r.tokens).to.not.be.empty;
+            }
             rule = r.state;
         }
-        expect(true).to.be.true;
     });
 
 });
