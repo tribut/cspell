@@ -19,8 +19,11 @@ export function unique<T>(src: T[]): T[] {
     return [...(new Set(src))];
 }
 
+/**
+ * Duplicate src with any undefined fields removed.
+ */
 export function clean<T extends Object>(src: T): T {
-    const r = src;
+    const r = Object.assign({}, src);
     type keyOfT = keyof T;
     type keysOfT = keyOfT[];
     for (const key of Object.keys(r) as keysOfT) {

@@ -25,7 +25,12 @@ describe('Validate util', () => {
         const obj = {
             a: undefined, b: 1, c: true, d: undefined, e: 'str'
         };
+        const expected = {
+            b: 1, c: true, e: 'str'
+        };
+        const copy = Object.assign({}, obj);
         const cleanObj = util.clean(obj);
-        expect([...Object.keys(cleanObj)]).to.be.deep.equal(['b', 'c', 'e']);
+        expect(cleanObj).to.be.deep.equal(expected);
+        expect(obj, 'Make sure the original object is not changed.').to.be.deep.equal(copy);
     });
 });
