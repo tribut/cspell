@@ -77,7 +77,7 @@
     "mocha": "^4.1.0",
     "nyc": "^11.5.0",
     "rimraf": "^2.6.2",
-    "ts-node": "^3.3.0",
+    "ts-node": "^5.0.0",
     "tslint": "^5.9.1",
     "typescript": "^2.7.2"
   },
@@ -104,7 +104,7 @@
     "rxjs": "^5.5.6",
     "rxjs-from-iterable": "^1.0.5",
     "vscode-uri": "^1.0.1",
-    "xregexp": "^4.0.0"
+    "xregexp": "^4.1.1"
   },
   "engines": {
     "node": ">=8.0.0"
