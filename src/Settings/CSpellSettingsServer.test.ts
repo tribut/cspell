@@ -93,30 +93,30 @@ describe('Validate CSpellSettingsServer', () => {
     });
 
     it('tests mergeSettings when left/right are the same', () => {
-        expect(mergeSettings(_defaultSettings, _defaultSettings)).to.be.equal(_defaultSettings);
+        expect(mergeSettings(_defaultSettings, _defaultSettings)).to.be.deep.equal(_defaultSettings);
     });
 
     it('tests mergeSettings when lefts are the same', () => {
         const base = mergeSettings(_defaultSettings, {});
         const setting1 = mergeSettings(base, {});
         const setting2 = mergeSettings(base, setting1);
-        expect(setting2).to.be.equal(setting1);
+        expect(setting2).to.be.deep.equal(setting1);
 
         const setting3 = mergeSettings(_defaultSettings, setting1);
-        expect(setting3).to.be.equal(setting1);
+        expect(setting3).to.be.deep.equal(setting1);
     });
 
     it('tests mergeSettings when rights are the same', () => {
         const base = mergeSettings(_defaultSettings, {});
         const setting1 = mergeSettings({}, base);
         const setting2 = mergeSettings(setting1, base);
-        expect(setting2).to.be.equal(setting1);
+        expect(setting2).to.be.deep.equal(setting1);
 
         const setting3 = mergeSettings(_defaultSettings, setting1);
-        expect(setting3).to.be.not.equal(setting1);
+        expect(setting3).to.be.not.deep.equal(setting1);
 
         const setting4 = mergeSettings(setting3, base);
-        expect(setting4).to.be.equal(setting3);
+        expect(setting4).to.be.deep.equal(setting3);
     });
 
     it('tests loading a missing cSpell.json file', () => {
