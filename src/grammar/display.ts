@@ -24,7 +24,7 @@ export function colorize(text: string, scopes: string): string {
 }
 
 export function *formatTokenizeText(text: string, grammar: Grammar, colorizer: (text: string, scopes: string) => string = colorize) {
-    for (const tr of grammar.tokenizeText(text.split('\n'))) {
+    for (const tr of grammar.tokenizeLine(text.split('\n'))) {
         const {line: rawLine, lineNumber, tokens} = tr;
         const line = rawLine.replace(/\t/g, ' ');
         yield `${lineNumber} ${line}`;

@@ -6,10 +6,18 @@ export interface Tokenizer {
     tokenize(line: string): Token[];
 }
 
-export interface TokenizeTextResult {
+export interface TokenizeLineResult {
     line: string;
     tokens: Token[];
     lineNumber: number;
+}
+
+export interface TokenizeTextResult {
+    tokenizedLines: TokenizeLineResult[];
+}
+
+export interface TokenizeFileResult extends TokenizeTextResult {
+    filename: string;
 }
 
 export class Grammar {
@@ -27,7 +35,7 @@ export class Grammar {
         };
     }
 
-    *tokenizeText(input: Iterable<string>): IterableIterator<TokenizeTextResult> {
+    *tokenizeLine(input: Iterable<string>): IterableIterator<TokenizeLineResult> {
         const tokenizer = this.tokenizer();
         let lineNumber = 0;
         for (const line of input) {
