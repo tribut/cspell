@@ -16,10 +16,6 @@ export interface TokenizeTextResult {
     tokenizedLines: TokenizeLineResult[];
 }
 
-export interface TokenizeFileResult extends TokenizeTextResult {
-    filename: string;
-}
-
 export class Grammar {
     constructor(private grammarDef: GrammarDefinition) {}
 
@@ -35,7 +31,7 @@ export class Grammar {
         };
     }
 
-    *tokenizeLine(input: Iterable<string>): IterableIterator<TokenizeLineResult> {
+    *tokenizeLines(input: Iterable<string>): IterableIterator<TokenizeLineResult> {
         const tokenizer = this.tokenizer();
         let lineNumber = 0;
         for (const line of input) {

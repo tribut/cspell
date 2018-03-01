@@ -7,6 +7,8 @@ export interface FixtureHelper {
     read(path: string): Promise<string>;
     write(path: string, text: string): Promise<void>;
     compare(fixturePath: string, actual: string): Promise<CompareResult>;
+    relativeFixturePath(...pathParts: string[]): string;
+    resolveFixturePath(...pathParts: string[]): string;
     readonly fixturesLocation: string;
     enableWriteBack: boolean;
 }
@@ -22,16 +24,26 @@ export function create(fixturesLocation: string = defaultFixturesLocation): Fixt
         read,
         write,
         compare,
+        relativeFixturePath,
+        resolveFixturePath,
         fixturesLocation,
         enableWriteBack: false,
     };
 
-    function read(fixturePath: string): Promise<string> {
-        return fs.readFile(path.join(fixturesLocation, fixturePath), 'utf8');
+    function relativeFixturePath(...pathParts: string[]) {
+        return path.join(...pathParts);
+    }
+
+    function resolveFixturePath(...pathParts: string[]) {
+        return path.join(fixturesLocation, ...pathParts);
+    }
+
+    function read(...fixturePath: string[]): Promise<string> {
+        return fs.readFile(resolveFixturePath(...fixturePath), 'utf8');
     }
 
     async function write(fixturePath: string, text: string): Promise<void> {
-        const filename = path.join(fixturesLocation, fixturePath);
+        const filename = resolveFixturePath(fixturePath);
         await fs.ensureDir(path.dirname(filename));
         return fs.writeFile(
             filename,
