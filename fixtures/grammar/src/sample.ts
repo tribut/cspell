@@ -2,7 +2,7 @@
 
 /**
  * sample.ts
- * This is a sample `typescript` file for us with the grammar parser.
+ * This is a sample `typescript` file for use with the grammar parser.
  *
  * It will contain a mix of stuff.
  */

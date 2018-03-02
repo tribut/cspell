@@ -61,6 +61,23 @@
 			],
 			"internalConsoleOptions": "openOnSessionStart"
 		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Profile Mocha Current File",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "runtimeArgs": [
+                "--prof",
+                "--harmony_regexp_lookbehind"
+            ],
+			"args": [
+				"--timeout","999999",
+				"--colors",
+				"--require", "ts-node/register",
+				"${file}"
+			],
+			"internalConsoleOptions": "openOnSessionStart"
+		},
         {
             "type": "node",
             "request": "attach",
