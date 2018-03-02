@@ -249,7 +249,7 @@ function extractScopes(rule: Rule): string[] {
         const { name = undefined } = r.pattern as PatternName;
         const scope = r.scope || name || undefined;
         if (scope) {
-            values.push(...scope.split(' '));
+            values.push(...scope.split(' ').reverse());
         }
         r = r.parent;
     }

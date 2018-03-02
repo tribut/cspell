@@ -196,7 +196,7 @@
 | ```      ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts |
 | ``` const ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts entity.name.type.ts |
 | ```   ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts |
-| ``` values ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts variable.object.property.ts meta.definition.property.ts |
+| ``` values ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts |
 | ```   ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts |
 | ``` = ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts keyword.operator.assignment.ts |
 | ```   ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts |
@@ -217,7 +217,7 @@
 | ```      ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts |
 | ``` const ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts entity.name.type.ts |
 | ```   ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts |
-| ``` extractor ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts variable.object.property.ts meta.definition.property.ts |
+| ``` extractor ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts |
 | ```   ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts |
 | ``` = ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts keyword.operator.assignment.ts |
 | ```   ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts |
@@ -239,7 +239,7 @@
 | text | scope |
 | -- | -- |
 | ```      ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts |
-| ``` return ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts entity.name.function.ts meta.definition.method.ts |
+| ``` return ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts meta.definition.method.ts entity.name.function.ts |
 | ```   ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts |
 | ``` ( ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts meta.parameters.ts punctuation.definition.parameters.begin.ts |
 | ``` v ``` | source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts meta.parameters.ts variable.parameter.ts |

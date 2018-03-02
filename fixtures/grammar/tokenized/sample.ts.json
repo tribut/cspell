@@ -1393,8 +1393,8 @@
             "meta.type.function.return.ts",
             "meta.object.type.ts",
             "meta.field.declaration.ts",
-            "variable.object.property.ts",
-            "meta.definition.property.ts"
+            "meta.definition.property.ts",
+            "variable.object.property.ts"
           ]
         },
         {
@@ -1610,8 +1610,8 @@
             "meta.type.function.return.ts",
             "meta.object.type.ts",
             "meta.field.declaration.ts",
-            "variable.object.property.ts",
-            "meta.definition.property.ts"
+            "meta.definition.property.ts",
+            "variable.object.property.ts"
           ]
         },
         {
@@ -1834,8 +1834,8 @@
             "meta.type.function.return.ts",
             "meta.object.type.ts",
             "meta.method.declaration.ts",
-            "entity.name.function.ts",
-            "meta.definition.method.ts"
+            "meta.definition.method.ts",
+            "entity.name.function.ts"
           ]
         },
         {
