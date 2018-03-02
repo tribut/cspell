@@ -10,7 +10,9 @@ const sampleJavascriptFile = path.join(__dirname, '..', '..', 'samples', 'src', 
 const golangGrammarFile = path.join(__dirname, '..', '..', 'samples', 'syntax', 'go.tmLanguage.json');
 const sampleGolangFile = path.join(__dirname, '..', '..', 'samples', 'src', 'sample.go');
 
-describe('Validate Grammar', () => {
+describe('Validate Grammar', function() {
+    this.timeout(10000);
+
     it('tests creating a Grammar from a file', async () => {
         const filename = javascriptGrammarFile;
         const grammar = await Grammar.createFromFile(filename);
