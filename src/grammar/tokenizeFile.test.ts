@@ -3,6 +3,7 @@ import { create } from './fixtures';
 import { Grammar } from './grammar';
 import { tokenizeFile } from './tokenizeFile';
 import * as cacheMap from './cacheMap';
+import * as path from 'path';
 
 const updateSchemas = false;
 const fixtureHelper = create();
@@ -30,23 +31,20 @@ describe('Validate tokenizeFile', function () {
         return grammarCache.get(name);
     }
 
-    it('test tokenizeFile', async () => {
-        const tests = [
-            ['sample.js', 'javascript.tmLanguage.json'],
-            ['sample.ts', 'TypeScript.tmLanguage.json'],
-        ];
+    const tests = [
+        ['sample.js', 'javascript.tmLanguage.json'],
+        ['sample.ts', 'TypeScript.tmLanguage.json'],
+    ];
 
-        for (const [sample, grammarName] of tests) {
+    for (const [sampleFile, grammarName] of tests) {
+        it(`test tokenizeFile ${sampleFile}`, async () => {
             const grammar = await fetchGrammar(grammarName)!;
-            const fixtureName = sample + '.json';
-
-            // for (let i = 0; i < 3; ++i) {
-            //     await tokenizeFile(grammar, pathToSource(sample));
-            // }
-            const tokenizedResult = await tokenizeFile(grammar, pathToSource(sample));
+            const fixtureName = sampleFile + '.json';
+            const tokenizedResult = await tokenizeFile(grammar, pathToSource(sampleFile));
+            tokenizedResult.filename = path.basename(tokenizedResult.filename);
             const json = JSON.stringify(tokenizedResult, null, 2);
             const comp = await fixtureHelper.compare(toFixturePath(fixtureName), json);
             expect(comp.actual).to.be.equal(comp.expected);
-        }
-    });
+        });
+    }
 });

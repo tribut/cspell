@@ -1,5 +1,5 @@
 {
-  "filename": "/Users/jason/projects/cspell/fixtures/grammar/src/sample.ts",
+  "filename": "sample.ts",
   "tokenizedLines": [
     {
       "line": "#!/usr/bin/env node",

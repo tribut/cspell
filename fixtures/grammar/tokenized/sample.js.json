@@ -1,5 +1,5 @@
 {
-  "filename": "/Users/jason/projects/cspell/fixtures/grammar/src/sample.js",
+  "filename": "sample.js",
   "tokenizedLines": [
     {
       "line": "\"use strict\";",
