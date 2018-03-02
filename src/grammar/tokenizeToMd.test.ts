@@ -4,9 +4,9 @@ import { Grammar } from './grammar';
 import * as cacheMap from './cacheMap';
 import { tokenizeFileToMd } from './tokenizeToMd';
 
-const updateSchemas = false;
+const updateFixtures = false;
 const fixtureHelper = create();
-fixtureHelper.enableWriteBack = updateSchemas;
+fixtureHelper.enableWriteBack = updateFixtures;
 
 function pathToSyntax(name: string) {
     return fixtureHelper.resolveFixturePath('grammar', 'syntax', name);

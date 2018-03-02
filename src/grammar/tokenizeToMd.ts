@@ -16,7 +16,7 @@ export function tokenizeLineToMd(tokenizedLine: TokenizeLineResult): string {
         parts.push('| -- | -- |');
 
         for (const t of tokens) {
-            parts.push(`| \`\`\`${line.slice(t.startIndex, t.endIndex)}\`\`\` | ${t.scopes.join(' ')} |`);
+            parts.push(`| \`\`\` ${line.slice(t.startIndex, t.endIndex)} \`\`\` | ${t.scopes.join(' ')} |`);
         }
         parts.push('');
     }
