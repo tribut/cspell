@@ -4,7 +4,7 @@ import { Grammar } from './grammar';
 import * as cacheMap from './cacheMap';
 import { tokenizeFile } from './tokenizeToAnsi';
 
-const updateFixtures = true;
+const updateFixtures = false;
 const fixtureHelper = create();
 fixtureHelper.enableWriteBack = updateFixtures;
 
