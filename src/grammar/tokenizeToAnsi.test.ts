@@ -37,7 +37,7 @@ describe('Validate tokenizeToAnsi', function () {
         ['sample.ts', 'TypeScript.tmLanguage.json'],
     ];
 
-    const colorizer = createScopeColorizer(createDefaultColorMap(new chalk.constructor({level: 2})));
+    const colorizer = createScopeColorizer(createDefaultColorMap(new chalk.constructor({level: 0})));
 
     for (const [sampleFile, grammarName] of tests) {
         it(`test tokenizeFile ${sampleFile}`, async () => {
