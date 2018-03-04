@@ -5,6 +5,7 @@ import { Scope } from './grammarDefinition';
 
 const defaultEncoding = 'utf8';
 const defaultLineLength = 140;
+const defaultMaxTextWidth = 40;
 
 export type ScopeColorizer = (text: string, scopes: Scope) => string;
 
@@ -40,6 +41,15 @@ function *splitLine(width: number, text: string): IterableIterator<string> {
     }
 }
 
+function limitText(text: string, width: number): string {
+    if (text.length <= width) return text;
+
+    const midFix = '...';
+    const left = text.slice(0, (width - midFix.length) / 2) + midFix;
+    const right = text.slice(left.length - width);
+    return left + right;
+}
+
 export function *tokenizeLine(colorize: ScopeColorizer, tokenizedLine: TokenizeLineResult): IterableIterator<string> {
     const { line, lineNumber, tokens } = tokenizedLine;
     const lineWidth = defaultLineLength;
@@ -50,10 +60,11 @@ export function *tokenizeLine(colorize: ScopeColorizer, tokenizedLine: TokenizeL
     yield `${lineNumber} ${colorize(cLine, 'source')}`;
 
     const results = tokens.map(t => ({ text: clean(line.slice(t.startIndex, t.endIndex)), scopes: t.scopes.join(' ') }));
-    const w = Math.max(0, ...results.map(t => t.text.length));
+    const w = Math.min(Math.max(0, ...results.map(t => t.text.length)), defaultMaxTextWidth);
     const leftPad = ' '.repeat(w + 4 + 4);
     const scopeWidth = lineWidth - leftPad.length;
-    for (const {text, scopes} of results) {
+    for (const {text: rawText, scopes} of results) {
+        const text = limitText(rawText, w);
         let prefix = `  ${colorize(text, scopes) + ' '.repeat(2 + w - text.length)} => `;
         for (const scope of splitLine(scopeWidth, scopes)) {
             yield `${prefix}${scope}`;

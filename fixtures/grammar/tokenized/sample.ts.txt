@@ -13,7 +13,7 @@ sample.ts
   [48;5;234m[2m[32m * sample.ts[39m[22m[49m   =>  source.ts comment.block.documentation.ts
 
 5 [48;5;234m[90m * This is a sample `typescript` file for use with the grammar parser.[39m[49m
-  [48;5;234m[2m[32m * This is a sample `typescript` file for use with the grammar parser.[39m[22m[49m   =>  source.ts comment.block.documentation.ts
+  [48;5;234m[2m[32m * This is a sampl...the grammar parser.[39m[22m[49m   =>  source.ts comment.block.documentation.ts
 
 6 [48;5;234m[90m *[39m[49m
   [48;5;234m[2m[32m *[39m[22m[49m   =>  source.ts comment.block.documentation.ts

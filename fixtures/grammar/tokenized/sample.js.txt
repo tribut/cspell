@@ -160,8 +160,8 @@ sample.js
 15 
 
 16 [48;5;234m[90m// interface InitOptions extends Options {}[39m[49m
-  [48;5;234m[2m[32m//[39m[22m[49m                                          =>  source.js comment.line.double-slash.js punctuation.definition.comment.js
-  [48;5;234m[2m interface InitOptions extends Options {}[22m[49m   =>  source.js
+  [48;5;234m[2m[32m//[39m[22m[49m                                         =>  source.js comment.line.double-slash.js punctuation.definition.comment.js
+  [48;5;234m[2m interface InitOpt... extends Options {}[22m[49m   =>  source.js
 
 17 [48;5;234m[90mfunction issueEmitter(issue) {[39m[49m
   [48;5;234m[2mfunction[22m[49m       =>  source.js meta.function.js storage.type.function.js
@@ -477,115 +477,94 @@ sample.js
   [48;5;234m[92mprogram[39m[49m   =>  source.js variable.other.readwrite.js
 
 41 [48;5;234m[90m    .option('-c, --config <cspell.json>', 'Configuration file to use.  By default cspell looks for cspell.json in the current directory.')[39m[49m
-  [48;5;234m[2m    [22m[49m                                                                                            =>  source.js
-  [48;5;234m[33m.[39m[49m                                                                                               =>  source.js meta.function-call.js
-                                                                                                      punctuation.accessor.js
-  [48;5;234m[34moption[39m[49m                                                                                          =>  source.js meta.function-call.js
-                                                                                                      entity.name.function.js
-  [48;5;234m[2m([22m[49m                                                                                               =>  source.js meta.brace.round.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.begin.js
-  [48;5;234m[93m-c, --config <cspell.json>[39m[49m                                                                      =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.end.js
-  [48;5;234m[33m,[39m[49m                                                                                               =>  source.js
-                                                                                                      punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                                                               =>  source.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.begin.js
-  [48;5;234m[93mConfiguration file to use.  By default cspell looks for cspell.json in the current directory.[39m[49m   =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.end.js
-  [48;5;234m[2m)[22m[49m                                                                                               =>  source.js meta.brace.round.js
+  [48;5;234m[2m    [22m[49m                                       =>  source.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.function-call.js punctuation.accessor.js
+  [48;5;234m[34moption[39m[49m                                     =>  source.js meta.function-call.js entity.name.function.js
+  [48;5;234m[2m([22m[49m                                          =>  source.js meta.brace.round.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93m-c, --config <cspell.json>[39m[49m                 =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93mConfiguration file... current directory.[39m[49m   =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[2m)[22m[49m                                          =>  source.js meta.brace.round.js
 
 42 [48;5;234m[90m    .option('-v, --verbose', 'display more information about the files being checked and the configuration')[39m[49m
-  [48;5;234m[2m    [22m[49m                                                                           =>  source.js
-  [48;5;234m[33m.[39m[49m                                                                              =>  source.js meta.function-call.js punctuation.accessor.js
-  [48;5;234m[34moption[39m[49m                                                                         =>  source.js meta.function-call.js entity.name.function.js
-  [48;5;234m[2m([22m[49m                                                                              =>  source.js meta.brace.round.js
-  [48;5;234m[93m'[39m[49m                                                                              =>  source.js string.quoted.single.js
-                                                                                     punctuation.definition.string.begin.js
-  [48;5;234m[93m-v, --verbose[39m[49m                                                                  =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                              =>  source.js string.quoted.single.js
-                                                                                     punctuation.definition.string.end.js
-  [48;5;234m[33m,[39m[49m                                                                              =>  source.js punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                                              =>  source.js
-  [48;5;234m[93m'[39m[49m                                                                              =>  source.js string.quoted.single.js
-                                                                                     punctuation.definition.string.begin.js
-  [48;5;234m[93mdisplay more information about the files being checked and the configuration[39m[49m   =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                              =>  source.js string.quoted.single.js
-                                                                                     punctuation.definition.string.end.js
-  [48;5;234m[2m)[22m[49m                                                                              =>  source.js meta.brace.round.js
+  [48;5;234m[2m    [22m[49m                                       =>  source.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.function-call.js punctuation.accessor.js
+  [48;5;234m[34moption[39m[49m                                     =>  source.js meta.function-call.js entity.name.function.js
+  [48;5;234m[2m([22m[49m                                          =>  source.js meta.brace.round.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93m-v, --verbose[39m[49m                              =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93mdisplay more infor...d the configuration[39m[49m   =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[2m)[22m[49m                                          =>  source.js meta.brace.round.js
 
 43 [48;5;234m[90m    .option('--local <local>', 'Set language locals. i.e. "en,fr" for English and French, or "en-GB" for British English.')[39m[49m
-  [48;5;234m[2m    [22m[49m                                                                                        =>  source.js
-  [48;5;234m[33m.[39m[49m                                                                                           =>  source.js meta.function-call.js
-                                                                                                  punctuation.accessor.js
-  [48;5;234m[34moption[39m[49m                                                                                      =>  source.js meta.function-call.js
-                                                                                                  entity.name.function.js
-  [48;5;234m[2m([22m[49m                                                                                           =>  source.js meta.brace.round.js
-  [48;5;234m[93m'[39m[49m                                                                                           =>  source.js string.quoted.single.js
-                                                                                                  punctuation.definition.string.begin.js
-  [48;5;234m[93m--local <local>[39m[49m                                                                             =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                                           =>  source.js string.quoted.single.js
-                                                                                                  punctuation.definition.string.end.js
-  [48;5;234m[33m,[39m[49m                                                                                           =>  source.js punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                                                           =>  source.js
-  [48;5;234m[93m'[39m[49m                                                                                           =>  source.js string.quoted.single.js
-                                                                                                  punctuation.definition.string.begin.js
-  [48;5;234m[93mSet language locals. i.e. "en,fr" for English and French, or "en-GB" for British English.[39m[49m   =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                                           =>  source.js string.quoted.single.js
-                                                                                                  punctuation.definition.string.end.js
-  [48;5;234m[2m)[22m[49m                                                                                           =>  source.js meta.brace.round.js
+  [48;5;234m[2m    [22m[49m                                       =>  source.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.function-call.js punctuation.accessor.js
+  [48;5;234m[34moption[39m[49m                                     =>  source.js meta.function-call.js entity.name.function.js
+  [48;5;234m[2m([22m[49m                                          =>  source.js meta.brace.round.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93m--local <local>[39m[49m                            =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93mSet language local...or British English.[39m[49m   =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[2m)[22m[49m                                          =>  source.js meta.brace.round.js
 
 44 [48;5;234m[90m    .option('--wordsOnly', 'Only output the words not found in the dictionaries.')[39m[49m
-  [48;5;234m[2m    [22m[49m                                                   =>  source.js
-  [48;5;234m[33m.[39m[49m                                                      =>  source.js meta.function-call.js punctuation.accessor.js
-  [48;5;234m[34moption[39m[49m                                                 =>  source.js meta.function-call.js entity.name.function.js
-  [48;5;234m[2m([22m[49m                                                      =>  source.js meta.brace.round.js
-  [48;5;234m[93m'[39m[49m                                                      =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
-  [48;5;234m[93m--wordsOnly[39m[49m                                            =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                      =>  source.js string.quoted.single.js punctuation.definition.string.end.js
-  [48;5;234m[33m,[39m[49m                                                      =>  source.js punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                      =>  source.js
-  [48;5;234m[93m'[39m[49m                                                      =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
-  [48;5;234m[93mOnly output the words not found in the dictionaries.[39m[49m   =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                      =>  source.js string.quoted.single.js punctuation.definition.string.end.js
-  [48;5;234m[2m)[22m[49m                                                      =>  source.js meta.brace.round.js
+  [48;5;234m[2m    [22m[49m                                       =>  source.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.function-call.js punctuation.accessor.js
+  [48;5;234m[34moption[39m[49m                                     =>  source.js meta.function-call.js entity.name.function.js
+  [48;5;234m[2m([22m[49m                                          =>  source.js meta.brace.round.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93m--wordsOnly[39m[49m                                =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93mOnly output the wo...n the dictionaries.[39m[49m   =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[2m)[22m[49m                                          =>  source.js meta.brace.round.js
 
 45 [48;5;234m[90m    .option('-u, --unique', 'Only output the first instance of a word not found in the dictionaries.')[39m[49m
-  [48;5;234m[2m    [22m[49m                                                                      =>  source.js
-  [48;5;234m[33m.[39m[49m                                                                         =>  source.js meta.function-call.js punctuation.accessor.js
-  [48;5;234m[34moption[39m[49m                                                                    =>  source.js meta.function-call.js entity.name.function.js
-  [48;5;234m[2m([22m[49m                                                                         =>  source.js meta.brace.round.js
-  [48;5;234m[93m'[39m[49m                                                                         =>  source.js string.quoted.single.js
-                                                                                punctuation.definition.string.begin.js
-  [48;5;234m[93m-u, --unique[39m[49m                                                              =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                         =>  source.js string.quoted.single.js
-                                                                                punctuation.definition.string.end.js
-  [48;5;234m[33m,[39m[49m                                                                         =>  source.js punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                                         =>  source.js
-  [48;5;234m[93m'[39m[49m                                                                         =>  source.js string.quoted.single.js
-                                                                                punctuation.definition.string.begin.js
-  [48;5;234m[93mOnly output the first instance of a word not found in the dictionaries.[39m[49m   =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                         =>  source.js string.quoted.single.js
-                                                                                punctuation.definition.string.end.js
-  [48;5;234m[2m)[22m[49m                                                                         =>  source.js meta.brace.round.js
+  [48;5;234m[2m    [22m[49m                                       =>  source.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.function-call.js punctuation.accessor.js
+  [48;5;234m[34moption[39m[49m                                     =>  source.js meta.function-call.js entity.name.function.js
+  [48;5;234m[2m([22m[49m                                          =>  source.js meta.brace.round.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93m-u, --unique[39m[49m                               =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93mOnly output the fi...n the dictionaries.[39m[49m   =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[2m)[22m[49m                                          =>  source.js meta.brace.round.js
 
 46 [48;5;234m[90m    .option('--debug', 'Output information useful for debugging cspell.json files.')[39m[49m
-  [48;5;234m[2m    [22m[49m                                                         =>  source.js
-  [48;5;234m[33m.[39m[49m                                                            =>  source.js meta.function-call.js punctuation.accessor.js
-  [48;5;234m[34moption[39m[49m                                                       =>  source.js meta.function-call.js entity.name.function.js
-  [48;5;234m[2m([22m[49m                                                            =>  source.js meta.brace.round.js
-  [48;5;234m[93m'[39m[49m                                                            =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
-  [48;5;234m[93m--debug[39m[49m                                                      =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                            =>  source.js string.quoted.single.js punctuation.definition.string.end.js
-  [48;5;234m[33m,[39m[49m                                                            =>  source.js punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                            =>  source.js
-  [48;5;234m[93m'[39m[49m                                                            =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
-  [48;5;234m[93mOutput information useful for debugging cspell.json files.[39m[49m   =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                            =>  source.js string.quoted.single.js punctuation.definition.string.end.js
-  [48;5;234m[2m)[22m[49m                                                            =>  source.js meta.brace.round.js
+  [48;5;234m[2m    [22m[49m                                       =>  source.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.function-call.js punctuation.accessor.js
+  [48;5;234m[34moption[39m[49m                                     =>  source.js meta.function-call.js entity.name.function.js
+  [48;5;234m[2m([22m[49m                                          =>  source.js meta.brace.round.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93m--debug[39m[49m                                    =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93mOutput information... cspell.json files.[39m[49m   =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[2m)[22m[49m                                          =>  source.js meta.brace.round.js
 
 47 [48;5;234m[90m    .option('-e, --exclude <glob>', 'Exclude files matching the glob pattern')[39m[49m
   [48;5;234m[2m    [22m[49m                                      =>  source.js
@@ -799,56 +778,46 @@ sample.js
   [48;5;234m[33m{[39m[49m          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js punctuation.definition.block.js
 
 60 [48;5;234m[90m        console.error('CSpell: Files checked: %d, Issues found: %d in %d files', result.files, result.issues, result.filesWithIssues.size);[39m[49m
-  [48;5;234m[2m        [22m[49m                                                  =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-  [48;5;234m[2mconsole[22m[49m                                                   =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                meta.function-call.js support.class.console.js
-  [48;5;234m[33m.[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                meta.function-call.js punctuation.accessor.js
-  [48;5;234m[92merror[39m[49m                                                     =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                meta.function-call.js support.function.console.js
-  [48;5;234m[2m([22m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                meta.brace.round.js
-  [48;5;234m[93m'[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                string.quoted.single.js punctuation.definition.string.begin.js
-  [48;5;234m[93mCSpell: Files checked: %d, Issues found: %d in %d files[39m[49m   =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                string.quoted.single.js punctuation.definition.string.end.js
-  [48;5;234m[33m,[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-  [48;5;234m[92mresult[39m[49m                                                    =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                variable.other.object.js
-  [48;5;234m[33m.[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                punctuation.accessor.js
-  [48;5;234m[92mfiles[39m[49m                                                     =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                variable.other.property.js
-  [48;5;234m[33m,[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-  [48;5;234m[92mresult[39m[49m                                                    =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                variable.other.object.js
-  [48;5;234m[33m.[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                punctuation.accessor.js
-  [48;5;234m[92missues[39m[49m                                                    =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                variable.other.property.js
-  [48;5;234m[33m,[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-  [48;5;234m[92mresult[39m[49m                                                    =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                variable.other.object.js
-  [48;5;234m[33m.[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                punctuation.accessor.js
-  [48;5;234m[92mfilesWithIssues[39m[49m                                           =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                variable.other.object.property.js
-  [48;5;234m[33m.[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                punctuation.accessor.js
-  [48;5;234m[2msize[22m[49m                                                      =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                support.variable.property.dom.js
-  [48;5;234m[2m)[22m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                meta.brace.round.js
-  [48;5;234m[33m;[39m[49m                                                         =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
-                                                                punctuation.terminator.statement.js
+  [48;5;234m[2m        [22m[49m                                   =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+  [48;5;234m[2mconsole[22m[49m                                    =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js meta.function-call.js
+                                                 support.class.console.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js meta.function-call.js
+                                                 punctuation.accessor.js
+  [48;5;234m[92merror[39m[49m                                      =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js meta.function-call.js
+                                                 support.function.console.js
+  [48;5;234m[2m([22m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js meta.brace.round.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js string.quoted.single.js
+                                                 punctuation.definition.string.begin.js
+  [48;5;234m[93mCSpell: Files chec...und: %d in %d files[39m[49m   =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js string.quoted.single.js
+                                                 punctuation.definition.string.end.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+                                                 punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+  [48;5;234m[92mresult[39m[49m                                     =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js variable.other.object.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js punctuation.accessor.js
+  [48;5;234m[92mfiles[39m[49m                                      =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+                                                 variable.other.property.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+                                                 punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+  [48;5;234m[92mresult[39m[49m                                     =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js variable.other.object.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js punctuation.accessor.js
+  [48;5;234m[92missues[39m[49m                                     =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+                                                 variable.other.property.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+                                                 punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+  [48;5;234m[92mresult[39m[49m                                     =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js variable.other.object.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js punctuation.accessor.js
+  [48;5;234m[92mfilesWithIssues[39m[49m                            =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+                                                 variable.other.object.property.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js punctuation.accessor.js
+  [48;5;234m[2msize[22m[49m                                       =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+                                                 support.variable.property.dom.js
+  [48;5;234m[2m)[22m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js meta.brace.round.js
+  [48;5;234m[33m;[39m[49m                                          =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
+                                                 punctuation.terminator.statement.js
 
 61 [48;5;234m[90m        process.exit(result.issues ? 1 : 0);[39m[49m
   [48;5;234m[2m        [22m[49m   =>  source.js meta.arrow.js meta.block.js meta.arrow.js meta.block.js
@@ -950,26 +919,19 @@ sample.js
   [48;5;234m[2m)[22m[49m            =>  source.js meta.brace.round.js
 
 71 [48;5;234m[90m    .option('-c, --config <cspell.json>', 'Configuration file to use.  By default cspell looks for cspell.json in the current directory.')[39m[49m
-  [48;5;234m[2m    [22m[49m                                                                                            =>  source.js
-  [48;5;234m[33m.[39m[49m                                                                                               =>  source.js meta.function-call.js
-                                                                                                      punctuation.accessor.js
-  [48;5;234m[34moption[39m[49m                                                                                          =>  source.js meta.function-call.js
-                                                                                                      entity.name.function.js
-  [48;5;234m[2m([22m[49m                                                                                               =>  source.js meta.brace.round.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.begin.js
-  [48;5;234m[93m-c, --config <cspell.json>[39m[49m                                                                      =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.end.js
-  [48;5;234m[33m,[39m[49m                                                                                               =>  source.js
-                                                                                                      punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                                                               =>  source.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.begin.js
-  [48;5;234m[93mConfiguration file to use.  By default cspell looks for cspell.json in the current directory.[39m[49m   =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.end.js
-  [48;5;234m[2m)[22m[49m                                                                                               =>  source.js meta.brace.round.js
+  [48;5;234m[2m    [22m[49m                                       =>  source.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.function-call.js punctuation.accessor.js
+  [48;5;234m[34moption[39m[49m                                     =>  source.js meta.function-call.js entity.name.function.js
+  [48;5;234m[2m([22m[49m                                          =>  source.js meta.brace.round.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93m-c, --config <cspell.json>[39m[49m                 =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93mConfiguration file... current directory.[39m[49m   =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[2m)[22m[49m                                          =>  source.js meta.brace.round.js
 
 72 [48;5;234m[90m    .option('--no-color', 'Turn off color.')[39m[49m
   [48;5;234m[2m    [22m[49m              =>  source.js
@@ -1126,18 +1088,14 @@ sample.js
   [48;5;234m[2m)[22m[49m         =>  source.js meta.brace.round.js
 
 86 [48;5;234m[90m    .description('Spell check file(s) and display the result. The full file is displayed in color.')[39m[49m
-  [48;5;234m[2m    [22m[49m                                                                               =>  source.js
-  [48;5;234m[33m.[39m[49m                                                                                  =>  source.js meta.function-call.js
-                                                                                         punctuation.accessor.js
-  [48;5;234m[34mdescription[39m[49m                                                                        =>  source.js meta.function-call.js
-                                                                                         entity.name.function.js
-  [48;5;234m[2m([22m[49m                                                                                  =>  source.js meta.brace.round.js
-  [48;5;234m[93m'[39m[49m                                                                                  =>  source.js string.quoted.single.js
-                                                                                         punctuation.definition.string.begin.js
-  [48;5;234m[93mSpell check file(s) and display the result. The full file is displayed in color.[39m[49m   =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                                  =>  source.js string.quoted.single.js
-                                                                                         punctuation.definition.string.end.js
-  [48;5;234m[2m)[22m[49m                                                                                  =>  source.js meta.brace.round.js
+  [48;5;234m[2m    [22m[49m                                       =>  source.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.function-call.js punctuation.accessor.js
+  [48;5;234m[34mdescription[39m[49m                                =>  source.js meta.function-call.js entity.name.function.js
+  [48;5;234m[2m([22m[49m                                          =>  source.js meta.brace.round.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93mSpell check file(s...displayed in color.[39m[49m   =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[2m)[22m[49m                                          =>  source.js meta.brace.round.js
 
 87 [48;5;234m[90m    .arguments('<files...>')[39m[49m
   [48;5;234m[2m    [22m[49m         =>  source.js
@@ -1150,26 +1108,19 @@ sample.js
   [48;5;234m[2m)[22m[49m            =>  source.js meta.brace.round.js
 
 88 [48;5;234m[90m    .option('-c, --config <cspell.json>', 'Configuration file to use.  By default cspell looks for cspell.json in the current directory.')[39m[49m
-  [48;5;234m[2m    [22m[49m                                                                                            =>  source.js
-  [48;5;234m[33m.[39m[49m                                                                                               =>  source.js meta.function-call.js
-                                                                                                      punctuation.accessor.js
-  [48;5;234m[34moption[39m[49m                                                                                          =>  source.js meta.function-call.js
-                                                                                                      entity.name.function.js
-  [48;5;234m[2m([22m[49m                                                                                               =>  source.js meta.brace.round.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.begin.js
-  [48;5;234m[93m-c, --config <cspell.json>[39m[49m                                                                      =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.end.js
-  [48;5;234m[33m,[39m[49m                                                                                               =>  source.js
-                                                                                                      punctuation.separator.comma.js
-  [48;5;234m[2m [22m[49m                                                                                               =>  source.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.begin.js
-  [48;5;234m[93mConfiguration file to use.  By default cspell looks for cspell.json in the current directory.[39m[49m   =>  source.js string.quoted.single.js
-  [48;5;234m[93m'[39m[49m                                                                                               =>  source.js string.quoted.single.js
-                                                                                                      punctuation.definition.string.end.js
-  [48;5;234m[2m)[22m[49m                                                                                               =>  source.js meta.brace.round.js
+  [48;5;234m[2m    [22m[49m                                       =>  source.js
+  [48;5;234m[33m.[39m[49m                                          =>  source.js meta.function-call.js punctuation.accessor.js
+  [48;5;234m[34moption[39m[49m                                     =>  source.js meta.function-call.js entity.name.function.js
+  [48;5;234m[2m([22m[49m                                          =>  source.js meta.brace.round.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93m-c, --config <cspell.json>[39m[49m                 =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[33m,[39m[49m                                          =>  source.js punctuation.separator.comma.js
+  [48;5;234m[2m [22m[49m                                          =>  source.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.begin.js
+  [48;5;234m[93mConfiguration file... current directory.[39m[49m   =>  source.js string.quoted.single.js
+  [48;5;234m[93m'[39m[49m                                          =>  source.js string.quoted.single.js punctuation.definition.string.end.js
+  [48;5;234m[2m)[22m[49m                                          =>  source.js meta.brace.round.js
 
 89 [48;5;234m[90m    .option('--no-color', 'Turn off color.')[39m[49m
   [48;5;234m[2m    [22m[49m              =>  source.js
