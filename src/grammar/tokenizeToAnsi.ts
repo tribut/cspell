@@ -1,39 +1,12 @@
 import { Grammar, TokenizeLineResult } from './grammar';
 import * as fs from 'fs-extra';
 import * as path from 'path';
-import chalk, { Chalk } from 'chalk';
-import { create } from './cacheMap';
-
-type ColorMap = [RegExp, Chalk][];
-const bgColor = '#202020';
-const defaultLineLength = 140;
-
-const colorMap: ColorMap = [
-    [/ keyword/, chalk.yellow],
-    [/ entity.name/, chalk.blue],
-    [/ variable/, chalk.greenBright],
-    [/ string/, chalk.yellowBright],
-    [/comment/, chalk.dim.green],
-    [/ punctuation/, chalk.yellow],
-    [/support.function/, chalk.greenBright],
-    [/^source$/, chalk.gray]
-];
-
-const scopeCache = create((scopes: string) => {
-    for (const [reg, fn] of colorMap) {
-        if (reg.test(scopes)) {
-            return fn.bgHex(bgColor);
-        }
-    }
-    return chalk.dim.bgHex(bgColor);
-});
-
-export function colorize(text: string, scopes: string): string {
-    const fn = scopeCache.get(scopes)!;
-    return fn(text);
-}
+import { Scope } from './grammarDefinition';
 
 const defaultEncoding = 'utf8';
+const defaultLineLength = 140;
+
+export type ScopeColorizer = (text: string, scopes: Scope) => string;
 
 function *splitLine(width: number, text: string): IterableIterator<string> {
 
@@ -67,14 +40,14 @@ function *splitLine(width: number, text: string): IterableIterator<string> {
     }
 }
 
-export function *tokenizeLine(tokenizedLine: TokenizeLineResult): IterableIterator<string> {
+export function *tokenizeLine(colorize: ScopeColorizer, tokenizedLine: TokenizeLineResult): IterableIterator<string> {
     const { line, lineNumber, tokens } = tokenizedLine;
     const lineWidth = defaultLineLength;
 
     const clean = (t: string) => t.replace(/\t/g, ' ');
 
     const cLine = clean(line);
-    yield `${lineNumber} ${chalk.dim.bgHex(bgColor)(cLine)}`;
+    yield `${lineNumber} ${colorize(cLine, 'source')}`;
 
     const results = tokens.map(t => ({ text: clean(line.slice(t.startIndex, t.endIndex)), scopes: t.scopes.join(' ') }));
     const w = Math.max(0, ...results.map(t => t.text.length));
@@ -90,20 +63,20 @@ export function *tokenizeLine(tokenizedLine: TokenizeLineResult): IterableIterat
     yield '';
 }
 
-export function *tokenizeText(grammar: Grammar, text: string) {
+export function *tokenizeText(grammar: Grammar, colorizer: ScopeColorizer, text: string) {
     for (const t of grammar.tokenizeLines(text.split(/\r?\n/))) {
-        yield *tokenizeLine(t);
+        yield *tokenizeLine(colorizer, t);
     }
 }
 
-export async function tokenizeFile(grammar: Grammar, filename: string, encoding = defaultEncoding): Promise<string> {
+export async function tokenizeFile(grammar: Grammar, colorizer: ScopeColorizer, filename: string, encoding = defaultEncoding): Promise<string> {
     const text = await fs.readFile(filename, encoding);
     const name = path.basename(filename);
 
     return [
         `${name}`,
         '',
-        ...tokenizeText(grammar, text),
+        ...tokenizeText(grammar, colorizer, text),
         ''
     ].join('\n');
 }

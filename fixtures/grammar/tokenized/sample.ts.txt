@@ -1,523 +1,523 @@
 sample.ts
 
-1 [2m[48;5;234m#!/usr/bin/env node[49m[22m
-  [2m[32m[48;5;234m#![49m[39m[22m                  =>  source.ts comment.line.shebang.ts punctuation.definition.comment.ts
-  [2m[32m[48;5;234m/usr/bin/env node[49m[39m[22m   =>  source.ts comment.line.shebang.ts
+1 [48;5;234m[90m#!/usr/bin/env node[39m[49m
+  [48;5;234m[2m[32m#![39m[22m[49m                  =>  source.ts comment.line.shebang.ts punctuation.definition.comment.ts
+  [48;5;234m[2m[32m/usr/bin/env node[39m[22m[49m   =>  source.ts comment.line.shebang.ts
 
 2 
 
-3 [2m[48;5;234m/**[49m[22m
-  [2m[32m[48;5;234m/**[49m[39m[22m   =>  source.ts comment.block.documentation.ts punctuation.definition.comment.ts
+3 [48;5;234m[90m/**[39m[49m
+  [48;5;234m[2m[32m/**[39m[22m[49m   =>  source.ts comment.block.documentation.ts punctuation.definition.comment.ts
 
-4 [2m[48;5;234m * sample.ts[49m[22m
-  [2m[32m[48;5;234m * sample.ts[49m[39m[22m   =>  source.ts comment.block.documentation.ts
+4 [48;5;234m[90m * sample.ts[39m[49m
+  [48;5;234m[2m[32m * sample.ts[39m[22m[49m   =>  source.ts comment.block.documentation.ts
 
-5 [2m[48;5;234m * This is a sample `typescript` file for use with the grammar parser.[49m[22m
-  [2m[32m[48;5;234m * This is a sample `typescript` file for use with the grammar parser.[49m[39m[22m   =>  source.ts comment.block.documentation.ts
+5 [48;5;234m[90m * This is a sample `typescript` file for use with the grammar parser.[39m[49m
+  [48;5;234m[2m[32m * This is a sample `typescript` file for use with the grammar parser.[39m[22m[49m   =>  source.ts comment.block.documentation.ts
 
-6 [2m[48;5;234m *[49m[22m
-  [2m[32m[48;5;234m *[49m[39m[22m   =>  source.ts comment.block.documentation.ts
+6 [48;5;234m[90m *[39m[49m
+  [48;5;234m[2m[32m *[39m[22m[49m   =>  source.ts comment.block.documentation.ts
 
-7 [2m[48;5;234m * It will contain a mix of stuff.[49m[22m
-  [2m[32m[48;5;234m * It will contain a mix of stuff.[49m[39m[22m   =>  source.ts comment.block.documentation.ts
+7 [48;5;234m[90m * It will contain a mix of stuff.[39m[49m
+  [48;5;234m[2m[32m * It will contain a mix of stuff.[39m[22m[49m   =>  source.ts comment.block.documentation.ts
 
-8 [2m[48;5;234m */[49m[22m
-  [2m[32m[48;5;234m [49m[39m[22m    =>  source.ts comment.block.documentation.ts
-  [2m[32m[48;5;234m*/[49m[39m[22m   =>  source.ts comment.block.documentation.ts punctuation.definition.comment.ts
+8 [48;5;234m[90m */[39m[49m
+  [48;5;234m[2m[32m [39m[22m[49m    =>  source.ts comment.block.documentation.ts
+  [48;5;234m[2m[32m*/[39m[22m[49m   =>  source.ts comment.block.documentation.ts punctuation.definition.comment.ts
 
 9 
 
 10 
 
-11 [2m[48;5;234m// alias for uniqueFilterFnGenerator[49m[22m
-  [2m[32m[48;5;234m//[49m[39m[22m                                   =>  source.ts comment.line.double-slash.ts punctuation.definition.comment.ts
-  [2m[48;5;234m alias for uniqueFilterFnGenerator[49m[22m   =>  source.ts
+11 [48;5;234m[90m// alias for uniqueFilterFnGenerator[39m[49m
+  [48;5;234m[2m[32m//[39m[22m[49m                                   =>  source.ts comment.line.double-slash.ts punctuation.definition.comment.ts
+  [48;5;234m[2m alias for uniqueFilterFnGenerator[22m[49m   =>  source.ts
 
-12 [2m[48;5;234mexport const uniqueFn = uniqueFilterFnGenerator;[49m[22m
-  [33m[48;5;234mexport[49m[39m                    =>  source.ts meta.var.expr.ts keyword.control.export.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.var.expr.ts
-  [2m[48;5;234mconst[49m[22m                     =>  source.ts meta.var.expr.ts storage.type.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.var.expr.ts
-  [92m[48;5;234muniqueFn[49m[39m                  =>  source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts
+12 [48;5;234m[90mexport const uniqueFn = uniqueFilterFnGenerator;[39m[49m
+  [48;5;234m[33mexport[39m[49m                    =>  source.ts meta.var.expr.ts keyword.control.export.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.var.expr.ts
+  [48;5;234m[2mconst[22m[49m                     =>  source.ts meta.var.expr.ts storage.type.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.var.expr.ts
+  [48;5;234m[92muniqueFn[39m[49m                  =>  source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts
                                 variable.other.readwrite.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.var.expr.ts meta.var-single-variable.expr.ts
-  [33m[48;5;234m=[49m[39m                         =>  source.ts meta.var.expr.ts keyword.operator.assignment.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.var.expr.ts
-  [92m[48;5;234muniqueFilterFnGenerator[49m[39m   =>  source.ts meta.var.expr.ts variable.other.readwrite.ts
-  [33m[48;5;234m;[49m[39m                         =>  source.ts punctuation.terminator.statement.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.var.expr.ts meta.var-single-variable.expr.ts
+  [48;5;234m[33m=[39m[49m                         =>  source.ts meta.var.expr.ts keyword.operator.assignment.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.var.expr.ts
+  [48;5;234m[92muniqueFilterFnGenerator[39m[49m   =>  source.ts meta.var.expr.ts variable.other.readwrite.ts
+  [48;5;234m[33m;[39m[49m                         =>  source.ts punctuation.terminator.statement.ts
 
 13 
 
-14 [2m[48;5;234mexport function uniqueFilterFnGenerator<T>(): (v: T) => boolean;[49m[22m
-  [33m[48;5;234mexport[49m[39m                    =>  source.ts meta.function.ts keyword.control.export.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts
-  [2m[48;5;234mfunction[49m[22m                  =>  source.ts meta.function.ts storage.type.function.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts
-  [34m[48;5;234muniqueFilterFnGenerator[49m[39m   =>  source.ts meta.function.ts meta.definition.function.ts entity.name.function.ts
-  [33m[48;5;234m<[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
-  [34m[48;5;234mT[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts entity.name.type.ts
-  [33m[48;5;234m>[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
-  [33m[48;5;234m([49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
-  [33m[48;5;234m)[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.end.ts
-  [33m[48;5;234m:[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts
-  [33m[48;5;234m([49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+14 [48;5;234m[90mexport function uniqueFilterFnGenerator<T>(): (v: T) => boolean;[39m[49m
+  [48;5;234m[33mexport[39m[49m                    =>  source.ts meta.function.ts keyword.control.export.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts
+  [48;5;234m[2mfunction[22m[49m                  =>  source.ts meta.function.ts storage.type.function.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts
+  [48;5;234m[34muniqueFilterFnGenerator[39m[49m   =>  source.ts meta.function.ts meta.definition.function.ts entity.name.function.ts
+  [48;5;234m[33m<[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
+  [48;5;234m[34mT[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts entity.name.type.ts
+  [48;5;234m[33m>[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
+  [48;5;234m[33m([39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
+  [48;5;234m[33m)[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.end.ts
+  [48;5;234m[33m:[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts keyword.operator.type.annotation.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts
+  [48;5;234m[33m([39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 punctuation.definition.parameters.begin.ts
-  [92m[48;5;234mv[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[92mv[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 variable.parameter.ts
-  [33m[48;5;234m:[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[33m:[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 meta.type.annotation.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 meta.type.annotation.ts
-  [34m[48;5;234mT[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[34mT[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 meta.type.annotation.ts entity.name.type.ts
-  [33m[48;5;234m)[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[33m)[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 punctuation.definition.parameters.end.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts
-  [2m[48;5;234m=>[49m[22m                        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts storage.type.function.arrow.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts
-  [2m[48;5;234mboolean[49m[22m                   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts support.type.primitive.ts
-  [33m[48;5;234m;[49m[39m                         =>  source.ts punctuation.terminator.statement.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts
+  [48;5;234m[2m=>[22m[49m                        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts storage.type.function.arrow.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts
+  [48;5;234m[2mboolean[22m[49m                   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts support.type.primitive.ts
+  [48;5;234m[33m;[39m[49m                         =>  source.ts punctuation.terminator.statement.ts
 
-15 [2m[48;5;234mexport function uniqueFilterFnGenerator<T, U>(extractFn: (v: T) => U): (v: T) => boolean;[49m[22m
-  [33m[48;5;234mexport[49m[39m                    =>  source.ts meta.function.ts keyword.control.export.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts
-  [2m[48;5;234mfunction[49m[22m                  =>  source.ts meta.function.ts storage.type.function.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts
-  [34m[48;5;234muniqueFilterFnGenerator[49m[39m   =>  source.ts meta.function.ts meta.definition.function.ts entity.name.function.ts
-  [33m[48;5;234m<[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
-  [34m[48;5;234mT[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts entity.name.type.ts
-  [33m[48;5;234m,[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.separator.comma.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.type.parameters.ts
-  [34m[48;5;234mU[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts entity.name.type.ts
-  [33m[48;5;234m>[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
-  [33m[48;5;234m([49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
-  [34m[48;5;234mextractFn[49m[39m                 =>  source.ts meta.function.ts meta.parameters.ts entity.name.function.ts
-  [33m[48;5;234m:[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts
-  [33m[48;5;234m([49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+15 [48;5;234m[90mexport function uniqueFilterFnGenerator<T, U>(extractFn: (v: T) => U): (v: T) => boolean;[39m[49m
+  [48;5;234m[33mexport[39m[49m                    =>  source.ts meta.function.ts keyword.control.export.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts
+  [48;5;234m[2mfunction[22m[49m                  =>  source.ts meta.function.ts storage.type.function.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts
+  [48;5;234m[34muniqueFilterFnGenerator[39m[49m   =>  source.ts meta.function.ts meta.definition.function.ts entity.name.function.ts
+  [48;5;234m[33m<[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
+  [48;5;234m[34mT[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts entity.name.type.ts
+  [48;5;234m[33m,[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.separator.comma.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts
+  [48;5;234m[34mU[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts entity.name.type.ts
+  [48;5;234m[33m>[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
+  [48;5;234m[33m([39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
+  [48;5;234m[34mextractFn[39m[49m                 =>  source.ts meta.function.ts meta.parameters.ts entity.name.function.ts
+  [48;5;234m[33m:[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts
+  [48;5;234m[33m([39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts punctuation.definition.parameters.begin.ts
-  [92m[48;5;234mv[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+  [48;5;234m[92mv[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts variable.parameter.ts
-  [33m[48;5;234m:[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+  [48;5;234m[33m:[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts meta.type.annotation.ts
-  [34m[48;5;234mT[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+  [48;5;234m[34mT[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts meta.type.annotation.ts entity.name.type.ts
-  [33m[48;5;234m)[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+  [48;5;234m[33m)[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts punctuation.definition.parameters.end.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts
-  [2m[48;5;234m=>[49m[22m                        =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts
+  [48;5;234m[2m=>[22m[49m                        =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
                                 storage.type.function.arrow.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
-  [34m[48;5;234mU[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
+  [48;5;234m[34mU[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
                                 entity.name.type.ts
-  [33m[48;5;234m)[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.end.ts
-  [33m[48;5;234m:[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts
-  [33m[48;5;234m([49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[33m)[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.end.ts
+  [48;5;234m[33m:[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts keyword.operator.type.annotation.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts
+  [48;5;234m[33m([39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 punctuation.definition.parameters.begin.ts
-  [92m[48;5;234mv[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[92mv[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 variable.parameter.ts
-  [33m[48;5;234m:[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[33m:[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 meta.type.annotation.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 meta.type.annotation.ts
-  [34m[48;5;234mT[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[34mT[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 meta.type.annotation.ts entity.name.type.ts
-  [33m[48;5;234m)[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[33m)[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 punctuation.definition.parameters.end.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts
-  [2m[48;5;234m=>[49m[22m                        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts storage.type.function.arrow.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts
-  [2m[48;5;234mboolean[49m[22m                   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts support.type.primitive.ts
-  [33m[48;5;234m;[49m[39m                         =>  source.ts punctuation.terminator.statement.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts
+  [48;5;234m[2m=>[22m[49m                        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts storage.type.function.arrow.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts
+  [48;5;234m[2mboolean[22m[49m                   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts support.type.primitive.ts
+  [48;5;234m[33m;[39m[49m                         =>  source.ts punctuation.terminator.statement.ts
 
-16 [2m[48;5;234mexport function uniqueFilterFnGenerator<T>(extractFn?: (v: T) => T): (v: T) => boolean {[49m[22m
-  [33m[48;5;234mexport[49m[39m                    =>  source.ts meta.function.ts keyword.control.export.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts
-  [2m[48;5;234mfunction[49m[22m                  =>  source.ts meta.function.ts storage.type.function.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts
-  [34m[48;5;234muniqueFilterFnGenerator[49m[39m   =>  source.ts meta.function.ts meta.definition.function.ts entity.name.function.ts
-  [33m[48;5;234m<[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
-  [34m[48;5;234mT[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts entity.name.type.ts
-  [33m[48;5;234m>[49m[39m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
-  [33m[48;5;234m([49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
-  [34m[48;5;234mextractFn[49m[39m                 =>  source.ts meta.function.ts meta.parameters.ts entity.name.function.ts
-  [33m[48;5;234m?[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts keyword.operator.optional.ts
-  [33m[48;5;234m:[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts
-  [33m[48;5;234m([49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+16 [48;5;234m[90mexport function uniqueFilterFnGenerator<T>(extractFn?: (v: T) => T): (v: T) => boolean {[39m[49m
+  [48;5;234m[33mexport[39m[49m                    =>  source.ts meta.function.ts keyword.control.export.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts
+  [48;5;234m[2mfunction[22m[49m                  =>  source.ts meta.function.ts storage.type.function.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts
+  [48;5;234m[34muniqueFilterFnGenerator[39m[49m   =>  source.ts meta.function.ts meta.definition.function.ts entity.name.function.ts
+  [48;5;234m[33m<[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
+  [48;5;234m[34mT[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts entity.name.type.ts
+  [48;5;234m[33m>[39m[49m                         =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
+  [48;5;234m[33m([39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
+  [48;5;234m[34mextractFn[39m[49m                 =>  source.ts meta.function.ts meta.parameters.ts entity.name.function.ts
+  [48;5;234m[33m?[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts keyword.operator.optional.ts
+  [48;5;234m[33m:[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts
+  [48;5;234m[33m([39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts punctuation.definition.parameters.begin.ts
-  [92m[48;5;234mv[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+  [48;5;234m[92mv[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts variable.parameter.ts
-  [33m[48;5;234m:[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+  [48;5;234m[33m:[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts meta.type.annotation.ts
-  [34m[48;5;234mT[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+  [48;5;234m[34mT[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts meta.type.annotation.ts entity.name.type.ts
-  [33m[48;5;234m)[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
+  [48;5;234m[33m)[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.ts
                                 meta.parameters.ts punctuation.definition.parameters.end.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts
-  [2m[48;5;234m=>[49m[22m                        =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts
+  [48;5;234m[2m=>[22m[49m                        =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
                                 storage.type.function.arrow.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
-  [34m[48;5;234mT[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
+  [48;5;234m[34mT[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.function.return.ts
                                 entity.name.type.ts
-  [33m[48;5;234m)[49m[39m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.end.ts
-  [33m[48;5;234m:[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts
-  [33m[48;5;234m([49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[33m)[39m[49m                         =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.end.ts
+  [48;5;234m[33m:[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts keyword.operator.type.annotation.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts
+  [48;5;234m[33m([39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 punctuation.definition.parameters.begin.ts
-  [92m[48;5;234mv[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[92mv[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 variable.parameter.ts
-  [33m[48;5;234m:[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[33m:[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 meta.type.annotation.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 meta.type.annotation.ts
-  [34m[48;5;234mT[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[34mT[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 meta.type.annotation.ts entity.name.type.ts
-  [33m[48;5;234m)[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
+  [48;5;234m[33m)[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.ts meta.parameters.ts
                                 punctuation.definition.parameters.end.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts
-  [2m[48;5;234m=>[49m[22m                        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts storage.type.function.arrow.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts
-  [2m[48;5;234mboolean[49m[22m                   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts support.type.primitive.ts
-  [2m[48;5;234m [49m[22m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts
-  [33m[48;5;234m{[49m[39m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts
+  [48;5;234m[2m=>[22m[49m                        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts storage.type.function.arrow.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts
+  [48;5;234m[2mboolean[22m[49m                   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts support.type.primitive.ts
+  [48;5;234m[2m [22m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts
+  [48;5;234m[33m{[39m[49m                         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
                                 punctuation.definition.block.ts
 
-17 [2m[48;5;234m    const values = new Set<T>();[49m[22m
-  [2m[48;5;234m    [49m[22m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
-  [34m[48;5;234mconst[49m[39m    =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts entity.name.type.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
-  [92m[48;5;234mvalues[49m[39m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+17 [48;5;234m[90m    const values = new Set<T>();[39m[49m
+  [48;5;234m[2m    [22m[49m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
+  [48;5;234m[34mconst[39m[49m    =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts entity.name.type.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
+  [48;5;234m[92mvalues[39m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                meta.definition.property.ts variable.object.property.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
-  [33m[48;5;234m=[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[33m=[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                keyword.operator.assignment.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
-  [33m[48;5;234mnew[49m[39m      =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[33mnew[39m[49m      =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                new.expr.ts keyword.operator.new.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                new.expr.ts
-  [34m[48;5;234mSet[49m[39m      =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[34mSet[39m[49m      =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                new.expr.ts entity.name.type.ts
-  [33m[48;5;234m<[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[33m<[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                new.expr.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
-  [34m[48;5;234mT[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[34mT[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                new.expr.ts meta.type.parameters.ts entity.name.type.ts
-  [33m[48;5;234m>[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[33m>[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                new.expr.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
-  [2m[48;5;234m([49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m([22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                new.expr.ts meta.brace.round.ts
-  [2m[48;5;234m)[49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m)[22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                new.expr.ts meta.brace.round.ts
-  [33m[48;5;234m;[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
+  [48;5;234m[33m;[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
                punctuation.terminator.statement.ts
 
-18 [2m[48;5;234m    const extractor = extractFn || (a => a);[49m[22m
-  [2m[48;5;234m    [49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
-  [34m[48;5;234mconst[49m[39m       =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts entity.name.type.ts
-  [2m[48;5;234m [49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
-  [92m[48;5;234mextractor[49m[39m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+18 [48;5;234m[90m    const extractor = extractFn || (a => a);[39m[49m
+  [48;5;234m[2m    [22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
+  [48;5;234m[34mconst[39m[49m       =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts entity.name.type.ts
+  [48;5;234m[2m [22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
+  [48;5;234m[92mextractor[39m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   meta.definition.property.ts variable.object.property.ts
-  [2m[48;5;234m [49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
-  [33m[48;5;234m=[49m[39m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m [22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[33m=[39m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   keyword.operator.assignment.ts
-  [2m[48;5;234m [49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
-  [92m[48;5;234mextractFn[49m[39m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m [22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[92mextractFn[39m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   variable.other.readwrite.ts
-  [2m[48;5;234m [49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
-  [33m[48;5;234m||[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m [22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[33m||[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   keyword.operator.logical.ts
-  [2m[48;5;234m [49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
-  [2m[48;5;234m([49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m [22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m([22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   meta.brace.round.ts
-  [92m[48;5;234ma[49m[39m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[92ma[39m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   meta.arrow.ts variable.parameter.ts
-  [2m[48;5;234m [49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m [22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   meta.arrow.ts
-  [2m[48;5;234m=>[49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m=>[22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   meta.arrow.ts storage.type.function.arrow.ts
-  [2m[48;5;234m [49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m [22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   meta.arrow.ts
-  [92m[48;5;234ma[49m[39m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[92ma[39m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   meta.arrow.ts variable.other.readwrite.ts
-  [2m[48;5;234m)[49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
+  [48;5;234m[2m)[22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.field.declaration.ts
                   meta.brace.round.ts
-  [33m[48;5;234m;[49m[39m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
+  [48;5;234m[33m;[39m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
                   punctuation.terminator.statement.ts
 
-19 [2m[48;5;234m    return (v: T) => {[49m[22m
-  [2m[48;5;234m    [49m[22m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
-  [34m[48;5;234mreturn[49m[39m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+19 [48;5;234m[90m    return (v: T) => {[39m[49m
+  [48;5;234m[2m    [22m[49m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
+  [48;5;234m[34mreturn[39m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                meta.definition.method.ts entity.name.function.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
-  [33m[48;5;234m([49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m([39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                meta.parameters.ts punctuation.definition.parameters.begin.ts
-  [92m[48;5;234mv[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92mv[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                meta.parameters.ts variable.parameter.ts
-  [33m[48;5;234m:[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m:[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                meta.parameters.ts meta.type.annotation.ts
-  [34m[48;5;234mT[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[34mT[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                meta.parameters.ts meta.type.annotation.ts entity.name.type.ts
-  [33m[48;5;234m)[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m)[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                meta.parameters.ts punctuation.definition.parameters.end.ts
-  [2m[48;5;234m => [49m[22m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
-  [33m[48;5;234m{[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m => [22m[49m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m{[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                meta.block.ts punctuation.definition.block.ts
 
-20 [2m[48;5;234m        const vv = extractor(v);[49m[22m
-  [2m[48;5;234m        [49m[22m    =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+20 [48;5;234m[90m        const vv = extractor(v);[39m[49m
+  [48;5;234m[2m        [22m[49m    =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts
-  [2m[48;5;234mconst[49m[22m       =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2mconst[22m[49m       =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts meta.var.expr.ts storage.type.ts
-  [2m[48;5;234m [49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m [22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts meta.var.expr.ts
-  [92m[48;5;234mvv[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92mvv[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.readwrite.ts
-  [2m[48;5;234m [49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m [22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts meta.var.expr.ts meta.var-single-variable.expr.ts
-  [33m[48;5;234m=[49m[39m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m=[39m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts meta.var.expr.ts keyword.operator.assignment.ts
-  [2m[48;5;234m [49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m [22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts meta.var.expr.ts
-  [34m[48;5;234mextractor[49m[39m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[34mextractor[39m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts meta.var.expr.ts meta.function-call.ts entity.name.function.ts
-  [2m[48;5;234m([49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m([22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts meta.var.expr.ts meta.brace.round.ts
-  [92m[48;5;234mv[49m[39m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92mv[39m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts meta.var.expr.ts variable.other.readwrite.ts
-  [2m[48;5;234m)[49m[22m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m)[22m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts meta.var.expr.ts meta.brace.round.ts
-  [33m[48;5;234m;[49m[39m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m;[39m[49m           =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                   meta.block.ts punctuation.terminator.statement.ts
 
-21 [2m[48;5;234m        const ret = !values.has(vv);[49m[22m
-  [2m[48;5;234m        [49m[22m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+21 [48;5;234m[90m        const ret = !values.has(vv);[39m[49m
+  [48;5;234m[2m        [22m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts
-  [2m[48;5;234mconst[49m[22m      =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2mconst[22m[49m      =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts storage.type.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts
-  [92m[48;5;234mret[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92mret[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.readwrite.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts meta.var-single-variable.expr.ts
-  [33m[48;5;234m=[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m=[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts keyword.operator.assignment.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts
-  [33m[48;5;234m![49m[39m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m![39m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts keyword.operator.logical.ts
-  [92m[48;5;234mvalues[49m[39m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92mvalues[39m[49m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts meta.function-call.ts variable.other.object.ts
-  [33m[48;5;234m.[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m.[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts meta.function-call.ts punctuation.accessor.ts
-  [92m[48;5;234mhas[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92mhas[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts meta.function-call.ts support.function.dom.ts
-  [2m[48;5;234m([49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m([22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts meta.brace.round.ts
-  [92m[48;5;234mvv[49m[39m         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92mvv[39m[49m         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts variable.other.readwrite.ts
-  [2m[48;5;234m)[49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m)[22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.var.expr.ts meta.brace.round.ts
-  [33m[48;5;234m;[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m;[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts punctuation.terminator.statement.ts
 
-22 [2m[48;5;234m        values.add(vv);[49m[22m
-  [2m[48;5;234m        [49m[22m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+22 [48;5;234m[90m        values.add(vv);[39m[49m
+  [48;5;234m[2m        [22m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts
-  [92m[48;5;234mvalues[49m[39m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92mvalues[39m[49m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.function-call.ts variable.other.object.ts
-  [33m[48;5;234m.[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m.[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.function-call.ts punctuation.accessor.ts
-  [92m[48;5;234madd[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92madd[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.function-call.ts support.function.dom.ts
-  [2m[48;5;234m([49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m([22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.brace.round.ts
-  [92m[48;5;234mvv[49m[39m         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92mvv[39m[49m         =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts variable.other.readwrite.ts
-  [2m[48;5;234m)[49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m)[22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts meta.brace.round.ts
-  [33m[48;5;234m;[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m;[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts punctuation.terminator.statement.ts
 
-23 [2m[48;5;234m        return ret;[49m[22m
-  [2m[48;5;234m        [49m[22m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+23 [48;5;234m[90m        return ret;[39m[49m
+  [48;5;234m[2m        [22m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts
-  [33m[48;5;234mreturn[49m[39m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33mreturn[39m[49m     =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts keyword.control.flow.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts
-  [92m[48;5;234mret[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[92mret[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts variable.other.readwrite.ts
-  [33m[48;5;234m;[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m;[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
                  meta.block.ts punctuation.terminator.statement.ts
 
-24 [2m[48;5;234m    };[49m[22m
-  [2m[48;5;234m    [49m[22m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+24 [48;5;234m[90m    };[39m[49m
+  [48;5;234m[2m    [22m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
              meta.block.ts
-  [33m[48;5;234m}[49m[39m      =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
+  [48;5;234m[33m}[39m[49m      =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts meta.method.declaration.ts
              meta.block.ts punctuation.definition.block.ts
-  [33m[48;5;234m;[49m[39m      =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
+  [48;5;234m[33m;[39m[49m      =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts
              punctuation.terminator.statement.ts
 
-25 [2m[48;5;234m}[49m[22m
-  [33m[48;5;234m}[49m[39m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts punctuation.definition.block.ts
+25 [48;5;234m[90m}[39m[49m
+  [48;5;234m[33m}[39m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.type.function.return.ts meta.object.type.ts punctuation.definition.block.ts
 
 26 
 
-27 [2m[48;5;234mexport function unique<T>(src: T[]): T[] {[49m[22m
-  [33m[48;5;234mexport[49m[39m     =>  source.ts meta.function.ts keyword.control.export.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts
-  [2m[48;5;234mfunction[49m[22m   =>  source.ts meta.function.ts storage.type.function.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts
-  [34m[48;5;234munique[49m[39m     =>  source.ts meta.function.ts meta.definition.function.ts entity.name.function.ts
-  [33m[48;5;234m<[49m[39m          =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
-  [34m[48;5;234mT[49m[39m          =>  source.ts meta.function.ts meta.type.parameters.ts entity.name.type.ts
-  [33m[48;5;234m>[49m[39m          =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
-  [33m[48;5;234m([49m[39m          =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
-  [92m[48;5;234msrc[49m[39m        =>  source.ts meta.function.ts meta.parameters.ts variable.parameter.ts
-  [33m[48;5;234m:[49m[39m          =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts
-  [34m[48;5;234mT[49m[39m          =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts entity.name.type.ts
-  [2m[48;5;234m[[49m[22m          =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.tuple.ts meta.brace.square.ts
-  [2m[48;5;234m][49m[22m          =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.tuple.ts meta.brace.square.ts
-  [33m[48;5;234m)[49m[39m          =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.end.ts
-  [33m[48;5;234m:[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts keyword.operator.type.annotation.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts meta.return.type.ts
-  [34m[48;5;234mT[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts entity.name.type.ts
-  [2m[48;5;234m[[49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.tuple.ts meta.brace.square.ts
-  [2m[48;5;234m][49m[22m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.tuple.ts meta.brace.square.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts meta.return.type.ts
-  [33m[48;5;234m{[49m[39m          =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts punctuation.definition.block.ts
+27 [48;5;234m[90mexport function unique<T>(src: T[]): T[] {[39m[49m
+  [48;5;234m[33mexport[39m[49m     =>  source.ts meta.function.ts keyword.control.export.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts
+  [48;5;234m[2mfunction[22m[49m   =>  source.ts meta.function.ts storage.type.function.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts
+  [48;5;234m[34munique[39m[49m     =>  source.ts meta.function.ts meta.definition.function.ts entity.name.function.ts
+  [48;5;234m[33m<[39m[49m          =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
+  [48;5;234m[34mT[39m[49m          =>  source.ts meta.function.ts meta.type.parameters.ts entity.name.type.ts
+  [48;5;234m[33m>[39m[49m          =>  source.ts meta.function.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
+  [48;5;234m[33m([39m[49m          =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
+  [48;5;234m[92msrc[39m[49m        =>  source.ts meta.function.ts meta.parameters.ts variable.parameter.ts
+  [48;5;234m[33m:[39m[49m          =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts
+  [48;5;234m[34mT[39m[49m          =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts entity.name.type.ts
+  [48;5;234m[2m[[22m[49m          =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.tuple.ts meta.brace.square.ts
+  [48;5;234m[2m][22m[49m          =>  source.ts meta.function.ts meta.parameters.ts meta.type.annotation.ts meta.type.tuple.ts meta.brace.square.ts
+  [48;5;234m[33m)[39m[49m          =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.end.ts
+  [48;5;234m[33m:[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts keyword.operator.type.annotation.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts meta.return.type.ts
+  [48;5;234m[34mT[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts entity.name.type.ts
+  [48;5;234m[2m[[22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.tuple.ts meta.brace.square.ts
+  [48;5;234m[2m][22m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.type.tuple.ts meta.brace.square.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts meta.return.type.ts
+  [48;5;234m[33m{[39m[49m          =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts punctuation.definition.block.ts
 
-28 [2m[48;5;234m    return [...(new Set(src))];[49m[22m
-  [2m[48;5;234m    [49m[22m     =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts
-  [34m[48;5;234mreturn[49m[39m   =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts entity.name.type.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts
-  [2m[48;5;234m[[49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.brace.square.ts
-  [2m[48;5;234m...[49m[22m      =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts
-  [2m[48;5;234m([49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
+28 [48;5;234m[90m    return [...(new Set(src))];[39m[49m
+  [48;5;234m[2m    [22m[49m     =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts
+  [48;5;234m[34mreturn[39m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts entity.name.type.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts
+  [48;5;234m[2m[[22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.brace.square.ts
+  [48;5;234m[2m...[22m[49m      =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts
+  [48;5;234m[2m([22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
                meta.brace.round.ts
-  [34m[48;5;234mnew[49m[39m      =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
+  [48;5;234m[34mnew[39m[49m      =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
                entity.name.type.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
-  [34m[48;5;234mSet[49m[39m      =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
+  [48;5;234m[34mSet[39m[49m      =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
                entity.name.type.ts
-  [2m[48;5;234m([49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
+  [48;5;234m[2m([22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
                meta.type.paren.cover.ts meta.brace.round.ts
-  [34m[48;5;234msrc[49m[39m      =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
+  [48;5;234m[34msrc[39m[49m      =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
                meta.type.paren.cover.ts entity.name.type.ts
-  [2m[48;5;234m)[49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
+  [48;5;234m[2m)[22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
                meta.type.paren.cover.ts meta.brace.round.ts
-  [2m[48;5;234m)[49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
+  [48;5;234m[2m)[22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.type.paren.cover.ts
                meta.brace.round.ts
-  [2m[48;5;234m][49m[22m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.brace.square.ts
-  [33m[48;5;234m;[49m[39m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts punctuation.terminator.statement.ts
+  [48;5;234m[2m][22m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts meta.type.tuple.ts meta.brace.square.ts
+  [48;5;234m[33m;[39m[49m        =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts punctuation.terminator.statement.ts
 
-29 [2m[48;5;234m}[49m[22m
-  [33m[48;5;234m}[49m[39m   =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts punctuation.definition.block.ts
+29 [48;5;234m[90m}[39m[49m
+  [48;5;234m[33m}[39m[49m   =>  source.ts meta.function.ts meta.return.type.ts meta.object.type.ts punctuation.definition.block.ts
 
 30 
 
-31 [2m[48;5;234mfunction main() {[49m[22m
-  [2m[48;5;234mfunction[49m[22m   =>  source.ts meta.function.ts storage.type.function.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts
-  [34m[48;5;234mmain[49m[39m       =>  source.ts meta.function.ts meta.definition.function.ts entity.name.function.ts
-  [33m[48;5;234m([49m[39m          =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
-  [33m[48;5;234m)[49m[39m          =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.end.ts
-  [2m[48;5;234m [49m[22m          =>  source.ts meta.function.ts
-  [33m[48;5;234m{[49m[39m          =>  source.ts meta.function.ts meta.block.ts punctuation.definition.block.ts
+31 [48;5;234m[90mfunction main() {[39m[49m
+  [48;5;234m[2mfunction[22m[49m   =>  source.ts meta.function.ts storage.type.function.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts
+  [48;5;234m[34mmain[39m[49m       =>  source.ts meta.function.ts meta.definition.function.ts entity.name.function.ts
+  [48;5;234m[33m([39m[49m          =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
+  [48;5;234m[33m)[39m[49m          =>  source.ts meta.function.ts meta.parameters.ts punctuation.definition.parameters.end.ts
+  [48;5;234m[2m [22m[49m          =>  source.ts meta.function.ts
+  [48;5;234m[33m{[39m[49m          =>  source.ts meta.function.ts meta.block.ts punctuation.definition.block.ts
 
-32 [2m[48;5;234m    console.log('Hello World.');[49m[22m
-  [2m[48;5;234m    [49m[22m           =>  source.ts meta.function.ts meta.block.ts
-  [2m[48;5;234mconsole[49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.class.console.ts
-  [33m[48;5;234m.[49m[39m              =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts punctuation.accessor.ts
-  [92m[48;5;234mlog[49m[39m            =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.function.console.ts
-  [2m[48;5;234m([49m[22m              =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
-  [93m[48;5;234m'[49m[39m              =>  source.ts meta.function.ts meta.block.ts string.quoted.single.ts punctuation.definition.string.begin.ts
-  [93m[48;5;234mHello World.[49m[39m   =>  source.ts meta.function.ts meta.block.ts string.quoted.single.ts
-  [93m[48;5;234m'[49m[39m              =>  source.ts meta.function.ts meta.block.ts string.quoted.single.ts punctuation.definition.string.end.ts
-  [2m[48;5;234m)[49m[22m              =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
-  [33m[48;5;234m;[49m[39m              =>  source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts
+32 [48;5;234m[90m    console.log('Hello World.');[39m[49m
+  [48;5;234m[2m    [22m[49m           =>  source.ts meta.function.ts meta.block.ts
+  [48;5;234m[2mconsole[22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.class.console.ts
+  [48;5;234m[33m.[39m[49m              =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts punctuation.accessor.ts
+  [48;5;234m[92mlog[39m[49m            =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.function.console.ts
+  [48;5;234m[2m([22m[49m              =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
+  [48;5;234m[93m'[39m[49m              =>  source.ts meta.function.ts meta.block.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+  [48;5;234m[93mHello World.[39m[49m   =>  source.ts meta.function.ts meta.block.ts string.quoted.single.ts
+  [48;5;234m[93m'[39m[49m              =>  source.ts meta.function.ts meta.block.ts string.quoted.single.ts punctuation.definition.string.end.ts
+  [48;5;234m[2m)[22m[49m              =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
+  [48;5;234m[33m;[39m[49m              =>  source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts
 
 33 
 
-34 [2m[48;5;234m    const values = [1, 2, 3, 3, 4, 2, 5, 6];[49m[22m
-  [2m[48;5;234m    [49m[22m     =>  source.ts meta.function.ts meta.block.ts
-  [2m[48;5;234mconst[49m[22m    =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts storage.type.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts
-  [92m[48;5;234mvalues[49m[39m   =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts
+34 [48;5;234m[90m    const values = [1, 2, 3, 3, 4, 2, 5, 6];[39m[49m
+  [48;5;234m[2m    [22m[49m     =>  source.ts meta.function.ts meta.block.ts
+  [48;5;234m[2mconst[22m[49m    =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts storage.type.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts
+  [48;5;234m[92mvalues[39m[49m   =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts
                variable.other.readwrite.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.var-single-variable.expr.ts
-  [33m[48;5;234m=[49m[39m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts keyword.operator.assignment.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts
-  [2m[48;5;234m[[49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts meta.brace.square.ts
-  [2m[48;5;234m1[49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
-  [33m[48;5;234m,[49m[39m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
-  [2m[48;5;234m2[49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
-  [33m[48;5;234m,[49m[39m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
-  [2m[48;5;234m3[49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
-  [33m[48;5;234m,[49m[39m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
-  [2m[48;5;234m3[49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
-  [33m[48;5;234m,[49m[39m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
-  [2m[48;5;234m4[49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
-  [33m[48;5;234m,[49m[39m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
-  [2m[48;5;234m2[49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
-  [33m[48;5;234m,[49m[39m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
-  [2m[48;5;234m5[49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
-  [33m[48;5;234m,[49m[39m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
-  [2m[48;5;234m [49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
-  [2m[48;5;234m6[49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
-  [2m[48;5;234m][49m[22m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts meta.brace.square.ts
-  [33m[48;5;234m;[49m[39m        =>  source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.var-single-variable.expr.ts
+  [48;5;234m[33m=[39m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts keyword.operator.assignment.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts
+  [48;5;234m[2m[[22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts meta.brace.square.ts
+  [48;5;234m[2m1[22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
+  [48;5;234m[33m,[39m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
+  [48;5;234m[2m2[22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
+  [48;5;234m[33m,[39m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
+  [48;5;234m[2m3[22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
+  [48;5;234m[33m,[39m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
+  [48;5;234m[2m3[22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
+  [48;5;234m[33m,[39m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
+  [48;5;234m[2m4[22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
+  [48;5;234m[33m,[39m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
+  [48;5;234m[2m2[22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
+  [48;5;234m[33m,[39m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
+  [48;5;234m[2m5[22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
+  [48;5;234m[33m,[39m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts
+  [48;5;234m[2m [22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts
+  [48;5;234m[2m6[22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts
+  [48;5;234m[2m][22m[49m        =>  source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts meta.brace.square.ts
+  [48;5;234m[33m;[39m[49m        =>  source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts
 
-35 [2m[48;5;234m    console.log(values);[49m[22m
-  [2m[48;5;234m    [49m[22m      =>  source.ts meta.function.ts meta.block.ts
-  [2m[48;5;234mconsole[49m[22m   =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.class.console.ts
-  [33m[48;5;234m.[49m[39m         =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts punctuation.accessor.ts
-  [92m[48;5;234mlog[49m[39m       =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.function.console.ts
-  [2m[48;5;234m([49m[22m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
-  [92m[48;5;234mvalues[49m[39m    =>  source.ts meta.function.ts meta.block.ts variable.other.readwrite.ts
-  [2m[48;5;234m)[49m[22m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
-  [33m[48;5;234m;[49m[39m         =>  source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts
+35 [48;5;234m[90m    console.log(values);[39m[49m
+  [48;5;234m[2m    [22m[49m      =>  source.ts meta.function.ts meta.block.ts
+  [48;5;234m[2mconsole[22m[49m   =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.class.console.ts
+  [48;5;234m[33m.[39m[49m         =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts punctuation.accessor.ts
+  [48;5;234m[92mlog[39m[49m       =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.function.console.ts
+  [48;5;234m[2m([22m[49m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
+  [48;5;234m[92mvalues[39m[49m    =>  source.ts meta.function.ts meta.block.ts variable.other.readwrite.ts
+  [48;5;234m[2m)[22m[49m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
+  [48;5;234m[33m;[39m[49m         =>  source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts
 
-36 [2m[48;5;234m    console.log(unique(values));[49m[22m
-  [2m[48;5;234m    [49m[22m      =>  source.ts meta.function.ts meta.block.ts
-  [2m[48;5;234mconsole[49m[22m   =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.class.console.ts
-  [33m[48;5;234m.[49m[39m         =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts punctuation.accessor.ts
-  [92m[48;5;234mlog[49m[39m       =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.function.console.ts
-  [2m[48;5;234m([49m[22m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
-  [34m[48;5;234munique[49m[39m    =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts entity.name.function.ts
-  [2m[48;5;234m([49m[22m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
-  [92m[48;5;234mvalues[49m[39m    =>  source.ts meta.function.ts meta.block.ts variable.other.readwrite.ts
-  [2m[48;5;234m)[49m[22m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
-  [2m[48;5;234m)[49m[22m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
-  [33m[48;5;234m;[49m[39m         =>  source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts
+36 [48;5;234m[90m    console.log(unique(values));[39m[49m
+  [48;5;234m[2m    [22m[49m      =>  source.ts meta.function.ts meta.block.ts
+  [48;5;234m[2mconsole[22m[49m   =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.class.console.ts
+  [48;5;234m[33m.[39m[49m         =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts punctuation.accessor.ts
+  [48;5;234m[92mlog[39m[49m       =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts support.function.console.ts
+  [48;5;234m[2m([22m[49m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
+  [48;5;234m[34munique[39m[49m    =>  source.ts meta.function.ts meta.block.ts meta.function-call.ts entity.name.function.ts
+  [48;5;234m[2m([22m[49m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
+  [48;5;234m[92mvalues[39m[49m    =>  source.ts meta.function.ts meta.block.ts variable.other.readwrite.ts
+  [48;5;234m[2m)[22m[49m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
+  [48;5;234m[2m)[22m[49m         =>  source.ts meta.function.ts meta.block.ts meta.brace.round.ts
+  [48;5;234m[33m;[39m[49m         =>  source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts
 
-37 [2m[48;5;234m}[49m[22m
-  [33m[48;5;234m}[49m[39m   =>  source.ts meta.function.ts meta.block.ts punctuation.definition.block.ts
+37 [48;5;234m[90m}[39m[49m
+  [48;5;234m[33m}[39m[49m   =>  source.ts meta.function.ts meta.block.ts punctuation.definition.block.ts
 
 38 
 
-39 [2m[48;5;234mmain();[49m[22m
-  [34m[48;5;234mmain[49m[39m   =>  source.ts meta.function-call.ts entity.name.function.ts
-  [2m[48;5;234m([49m[22m      =>  source.ts meta.brace.round.ts
-  [2m[48;5;234m)[49m[22m      =>  source.ts meta.brace.round.ts
-  [33m[48;5;234m;[49m[39m      =>  source.ts punctuation.terminator.statement.ts
+39 [48;5;234m[90mmain();[39m[49m
+  [48;5;234m[34mmain[39m[49m   =>  source.ts meta.function-call.ts entity.name.function.ts
+  [48;5;234m[2m([22m[49m      =>  source.ts meta.brace.round.ts
+  [48;5;234m[2m)[22m[49m      =>  source.ts meta.brace.round.ts
+  [48;5;234m[33m;[39m[49m      =>  source.ts punctuation.terminator.statement.ts
 
 40 
 

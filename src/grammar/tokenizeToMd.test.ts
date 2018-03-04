@@ -20,7 +20,7 @@ function toFixturePath(name: string) {
     return fixtureHelper.relativeFixturePath('grammar', 'tokenized', name);
 }
 
-describe('Validate tokenizeFile', function () {
+describe('Validate tokenizeToMd', function () {
     this.timeout(60000);
     const grammarCache = cacheMap.create((grammarName: string) => {
         return Grammar.createFromFile(pathToSyntax(grammarName));
