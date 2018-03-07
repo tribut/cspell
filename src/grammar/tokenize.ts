@@ -2,6 +2,7 @@ import { GrammarDefinition, Pattern, RegexOrString, Capture, PatternName } from 
 import { isPatternInclude, isPatternMatch, isPatternBeginEnd, scope, captures, endCaptures, isPatternName } from './pattern';
 import * as XRegExp from 'xregexp';
 import { escapeMatch, MatchOffsetResult, matchesToOffsets } from './regexpUtil';
+import { create } from './cacheMap';
 
 const maxDepth = 100;
 
@@ -206,7 +207,13 @@ function findEndRule(rule: Rule): Rule {
 const matchSlashG = /^\\G/;
 const matchNegSlashG = '(?!\\G)';
 
+const regExCache = create(_regExpOrStringToRegExp);
+
 function regExpOrStringToRegExp(regex: RegexOrString): { regex: RegExp, sticky?: boolean } {
+    return regExCache.get(regex);
+}
+
+function _regExpOrStringToRegExp(regex: RegexOrString): { regex: RegExp, sticky?: boolean } {
     try {
         if (typeof regex === 'string') {
             if (matchSlashG.test(regex)) {
@@ -220,7 +227,6 @@ function regExpOrStringToRegExp(regex: RegexOrString): { regex: RegExp, sticky?:
         return { regex: /.^/ };
     }
 }
-
 function buildEndRegEx(regex: RegexOrString, match: RegExpExecArray): RegExp | undefined {
     if (!match) {
         return undefined;

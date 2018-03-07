@@ -11,7 +11,7 @@ describe('Validate CacheMap', function() {
 
     it('test undefined', () => {
         const loader = () => undefined;
-        const cache = create<string, string>(loader);
+        const cache = create<string, string | undefined>(loader);
         expect(cache.has('hello')).to.be.false;
         expect(cache.get('hello')).to.be.undefined;
     });
