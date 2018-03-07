@@ -30,7 +30,18 @@ export interface ExtendableSettings extends Settings {
     overrides?: OverrideSettings[];
 }
 
-export interface Settings extends BaseSetting {
+export interface ReportingSettings {
+    // The maximum number of problems to report in a file.
+    maxNumberOfProblems?: number;
+
+    // The maximum number of times the same word can be flagged as an error in a file.
+    maxDuplicateProblems?: number;
+
+    // Number of suggestions to make
+    numSuggestions?: number;
+}
+
+export interface Settings extends ReportingSettings, BaseSetting {
     // current active spelling language
     language?: LocalId;
 
@@ -40,32 +51,23 @@ export interface Settings extends BaseSetting {
     // list of words to be ignored
     ignoreWords?: string[];
 
-    // matching file paths will to be ignored
-    ignorePaths?: Glob[];
-
     // list of words to always be considered incorrect.
     flagWords?: string[];
 
     // languageIds for the files to spell check.
     enabledLanguageIds?: LanguageId[];
 
-    // The maximum number of problems to report in a file.
-    maxNumberOfProblems?: number;
-
-    // The maximum number of times the same word can be flagged as an error in a file.
-    maxDuplicateProblems?: number;
-
     // The minimum length of a word before checking it against a dictionary.
     minWordLength?: number;
-
-    // Number of suggestions to make
-    numSuggestions?: number;
 
     // Additional settings for individual languages.
     languageSettings?: LanguageSetting[];
 
     // Forces the spell checker to assume a give language id. Used mainly as an Override.
     languageId?: LanguageId;
+
+    // matching file paths will to be ignored
+    ignorePaths?: Glob[];
 }
 
 export interface LegacySettings {
