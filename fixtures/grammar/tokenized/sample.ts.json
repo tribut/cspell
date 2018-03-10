@@ -25,9 +25,27 @@
       ]
     },
     {
-      "line": "",
+      "line": "// Single line comment.",
       "lineNumber": 2,
-      "tokens": []
+      "tokens": [
+        {
+          "startIndex": 0,
+          "endIndex": 2,
+          "scopes": [
+            "source.ts",
+            "comment.line.double-slash.ts",
+            "punctuation.definition.comment.ts"
+          ]
+        },
+        {
+          "startIndex": 2,
+          "endIndex": 23,
+          "scopes": [
+            "source.ts",
+            "comment.line.double-slash.ts"
+          ]
+        }
+      ]
     },
     {
       "line": "/**",
@@ -129,9 +147,101 @@
       "tokens": []
     },
     {
-      "line": "",
+      "line": "const greeting = 'Hello World.';",
       "lineNumber": 10,
-      "tokens": []
+      "tokens": [
+        {
+          "startIndex": 0,
+          "endIndex": 5,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts",
+            "storage.type.ts"
+          ]
+        },
+        {
+          "startIndex": 5,
+          "endIndex": 6,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts"
+          ]
+        },
+        {
+          "startIndex": 6,
+          "endIndex": 14,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts",
+            "meta.var-single-variable.expr.ts",
+            "meta.definition.variable.ts",
+            "variable.other.readwrite.ts"
+          ]
+        },
+        {
+          "startIndex": 14,
+          "endIndex": 15,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts",
+            "meta.var-single-variable.expr.ts"
+          ]
+        },
+        {
+          "startIndex": 15,
+          "endIndex": 16,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts",
+            "keyword.operator.assignment.ts"
+          ]
+        },
+        {
+          "startIndex": 16,
+          "endIndex": 17,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts"
+          ]
+        },
+        {
+          "startIndex": 17,
+          "endIndex": 18,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts",
+            "string.quoted.single.ts",
+            "punctuation.definition.string.begin.ts"
+          ]
+        },
+        {
+          "startIndex": 18,
+          "endIndex": 30,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts",
+            "string.quoted.single.ts"
+          ]
+        },
+        {
+          "startIndex": 30,
+          "endIndex": 31,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts",
+            "string.quoted.single.ts",
+            "punctuation.definition.string.end.ts"
+          ]
+        },
+        {
+          "startIndex": 31,
+          "endIndex": 32,
+          "scopes": [
+            "source.ts",
+            "punctuation.terminator.statement.ts"
+          ]
+        }
+      ]
     },
     {
       "line": "// alias for uniqueFilterFnGenerator",
@@ -150,7 +260,8 @@
           "startIndex": 2,
           "endIndex": 36,
           "scopes": [
-            "source.ts"
+            "source.ts",
+            "comment.line.double-slash.ts"
           ]
         }
       ]
@@ -3161,8 +3272,45 @@
       ]
     },
     {
-      "line": "    console.log('Hello World.');",
+      "line": "    // Write something to the console.",
       "lineNumber": 32,
+      "tokens": [
+        {
+          "startIndex": 0,
+          "endIndex": 4,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "punctuation.whitespace.comment.leading.ts"
+          ]
+        },
+        {
+          "startIndex": 4,
+          "endIndex": 6,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "comment.line.double-slash.ts",
+            "punctuation.definition.comment.ts"
+          ]
+        },
+        {
+          "startIndex": 6,
+          "endIndex": 38,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "comment.line.double-slash.ts"
+          ]
+        }
+      ]
+    },
+    {
+      "line": "    console.log('Hello World.');",
+      "lineNumber": 33,
       "tokens": [
         {
           "startIndex": 0,
@@ -3271,13 +3419,204 @@
       ]
     },
     {
-      "line": "",
-      "lineNumber": 33,
-      "tokens": []
+      "line": "    let a = 2 + greeting.length;  // some random value.",
+      "lineNumber": 34,
+      "tokens": [
+        {
+          "startIndex": 0,
+          "endIndex": 4,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts"
+          ]
+        },
+        {
+          "startIndex": 4,
+          "endIndex": 7,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts",
+            "storage.type.ts"
+          ]
+        },
+        {
+          "startIndex": 7,
+          "endIndex": 8,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts"
+          ]
+        },
+        {
+          "startIndex": 8,
+          "endIndex": 9,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts",
+            "meta.var-single-variable.expr.ts",
+            "meta.definition.variable.ts",
+            "variable.other.readwrite.ts"
+          ]
+        },
+        {
+          "startIndex": 9,
+          "endIndex": 10,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts",
+            "meta.var-single-variable.expr.ts"
+          ]
+        },
+        {
+          "startIndex": 10,
+          "endIndex": 11,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts",
+            "keyword.operator.assignment.ts"
+          ]
+        },
+        {
+          "startIndex": 11,
+          "endIndex": 12,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts"
+          ]
+        },
+        {
+          "startIndex": 12,
+          "endIndex": 13,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts",
+            "constant.numeric.decimal.ts"
+          ]
+        },
+        {
+          "startIndex": 13,
+          "endIndex": 14,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts"
+          ]
+        },
+        {
+          "startIndex": 14,
+          "endIndex": 15,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts",
+            "keyword.operator.arithmetic.ts"
+          ]
+        },
+        {
+          "startIndex": 15,
+          "endIndex": 16,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts"
+          ]
+        },
+        {
+          "startIndex": 16,
+          "endIndex": 24,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts",
+            "variable.other.object.ts"
+          ]
+        },
+        {
+          "startIndex": 24,
+          "endIndex": 25,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts",
+            "punctuation.accessor.ts"
+          ]
+        },
+        {
+          "startIndex": 25,
+          "endIndex": 31,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "meta.var.expr.ts",
+            "support.variable.property.ts"
+          ]
+        },
+        {
+          "startIndex": 31,
+          "endIndex": 32,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "punctuation.terminator.statement.ts"
+          ]
+        },
+        {
+          "startIndex": 32,
+          "endIndex": 34,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts"
+          ]
+        },
+        {
+          "startIndex": 34,
+          "endIndex": 36,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "comment.line.double-slash.ts",
+            "punctuation.definition.comment.ts"
+          ]
+        },
+        {
+          "startIndex": 36,
+          "endIndex": 55,
+          "scopes": [
+            "source.ts",
+            "meta.function.ts",
+            "meta.block.ts",
+            "comment.line.double-slash.ts"
+          ]
+        }
+      ]
     },
     {
-      "line": "    const values = [1, 2, 3, 3, 4, 2, 5, 6];",
-      "lineNumber": 34,
+      "line": "    const values = [1, 2, 3, 3, 4, a, 5, 6];",
+      "lineNumber": 35,
       "tokens": [
         {
           "startIndex": 0,
@@ -3550,7 +3889,7 @@
             "meta.block.ts",
             "meta.var.expr.ts",
             "meta.array.literal.ts",
-            "constant.numeric.decimal.ts"
+            "variable.other.readwrite.ts"
           ]
         },
         {
@@ -3649,7 +3988,7 @@
     },
     {
       "line": "    console.log(values);",
-      "lineNumber": 35,
+      "lineNumber": 36,
       "tokens": [
         {
           "startIndex": 0,
@@ -3737,7 +4076,7 @@
     },
     {
       "line": "    console.log(unique(values));",
-      "lineNumber": 36,
+      "lineNumber": 37,
       "tokens": [
         {
           "startIndex": 0,
@@ -3856,7 +4195,7 @@
     },
     {
       "line": "}",
-      "lineNumber": 37,
+      "lineNumber": 38,
       "tokens": [
         {
           "startIndex": 0,
@@ -3872,12 +4211,12 @@
     },
     {
       "line": "",
-      "lineNumber": 38,
+      "lineNumber": 39,
       "tokens": []
     },
     {
       "line": "main();",
-      "lineNumber": 39,
+      "lineNumber": 40,
       "tokens": [
         {
           "startIndex": 0,
@@ -3916,7 +4255,7 @@
     },
     {
       "line": "",
-      "lineNumber": 40,
+      "lineNumber": 41,
       "tokens": []
     }
   ]

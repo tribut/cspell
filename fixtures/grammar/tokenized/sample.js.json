@@ -1269,7 +1269,8 @@
           "startIndex": 2,
           "endIndex": 43,
           "scopes": [
-            "source.js"
+            "source.js",
+            "comment.line.double-slash.js"
           ]
         }
       ]
@@ -1760,6 +1761,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.function-call.js",
             "variable.other.object.js"
           ]
@@ -1773,6 +1775,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.function-call.js",
             "punctuation.accessor.js"
           ]
@@ -1786,6 +1789,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.function-call.js",
             "variable.other.object.property.js"
           ]
@@ -1799,6 +1803,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.function-call.js",
             "punctuation.accessor.js"
           ]
@@ -1812,6 +1817,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.function-call.js",
             "entity.name.function.js"
           ]
@@ -1825,6 +1831,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.brace.round.js"
           ]
         },
@@ -1837,6 +1844,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "variable.other.readwrite.js"
           ]
         },
@@ -1849,6 +1857,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.brace.round.js"
           ]
         },
@@ -1895,6 +1904,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "variable.other.readwrite.js"
           ]
         },
@@ -1941,6 +1951,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "variable.other.readwrite.js"
           ]
         },
@@ -1987,6 +1998,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.function-call.js",
             "variable.other.object.js"
           ]
@@ -2000,6 +2012,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.function-call.js",
             "punctuation.accessor.js"
           ]
@@ -2013,6 +2026,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.function-call.js",
             "variable.other.object.property.js"
           ]
@@ -2026,6 +2040,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.function-call.js",
             "punctuation.accessor.js"
           ]
@@ -2039,6 +2054,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.function-call.js",
             "entity.name.function.js"
           ]
@@ -2052,6 +2068,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.brace.round.js"
           ]
         },
@@ -2064,6 +2081,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "variable.other.readwrite.js"
           ]
         },
@@ -2076,6 +2094,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "meta.brace.round.js"
           ]
         },
@@ -9864,6 +9883,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "variable.other.readwrite.js"
           ]
         },
@@ -11871,6 +11891,7 @@
             "meta.block.js",
             "string.template.js",
             "meta.template.expression.js",
+            "meta.embedded.line.js",
             "variable.other.readwrite.js"
           ]
         },
@@ -16602,7 +16623,8 @@
           "startIndex": 2,
           "endIndex": 31,
           "scopes": [
-            "source.js"
+            "source.js",
+            "comment.line.double-slash.js"
           ]
         }
       ]
