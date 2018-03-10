@@ -27,10 +27,10 @@ export interface WordRangeAcc {
     rangePos: number;
 }
 
-export const defaultMaxNumberOfProblems = 200;
+export const defaultMaxNumberOfProblems  = 200;
 export const defaultMaxDuplicateProblems = 5;
-export const defaultMinWordLength       = 4;
-export const minWordSplitLen            = 3;
+export const defaultMinWordLength        = 4;
+export const minWordSplitLen             = 3;
 
 
 export function validateText(
