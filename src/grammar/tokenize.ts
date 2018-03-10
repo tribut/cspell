@@ -62,7 +62,7 @@ export function tokenizeLine(text: string, rule: Rule): TokenizeLineResult {
                     pattern: { patterns: pattern.patterns || [] },
                     grammarDef: matchingRule.grammarDef,
                     depth: matchingRule.depth + 1,
-                    scope: undefined,
+                    scope: pattern.contentName,
                     end: buildEndRegEx(pattern.end, match),
                     comment: `Begin ${rule.depth + 1}: ${pattern.begin} <--> ${pattern.end} # ` + (pattern.name || pattern.comment || ''),
                 };

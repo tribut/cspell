@@ -7,7 +7,12 @@
 | ``` #! ``` | source.ts comment.line.shebang.ts punctuation.definition.comment.ts |
 | ``` /usr/bin/env node ``` | source.ts comment.line.shebang.ts |
 
-**2:** *blank line*
+**2:** ```// Single line comment.```
+
+| text | scope |
+| -- | -- |
+| ``` // ``` | source.ts comment.line.double-slash.ts punctuation.definition.comment.ts |
+| ```  Single line comment. ``` | source.ts comment.line.double-slash.ts |
 
 **3:** ```/**```
 
@@ -48,14 +53,27 @@
 
 **9:** *blank line*
 
-**10:** *blank line*
+**10:** ```const greeting = 'Hello World.';```
+
+| text | scope |
+| -- | -- |
+| ``` const ``` | source.ts meta.var.expr.ts storage.type.ts |
+| ```   ``` | source.ts meta.var.expr.ts |
+| ``` greeting ``` | source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.readwrite.ts |
+| ```   ``` | source.ts meta.var.expr.ts meta.var-single-variable.expr.ts |
+| ``` = ``` | source.ts meta.var.expr.ts keyword.operator.assignment.ts |
+| ```   ``` | source.ts meta.var.expr.ts |
+| ``` ' ``` | source.ts meta.var.expr.ts string.quoted.single.ts punctuation.definition.string.begin.ts |
+| ``` Hello World. ``` | source.ts meta.var.expr.ts string.quoted.single.ts |
+| ``` ' ``` | source.ts meta.var.expr.ts string.quoted.single.ts punctuation.definition.string.end.ts |
+| ``` ; ``` | source.ts punctuation.terminator.statement.ts |
 
 **11:** ```// alias for uniqueFilterFnGenerator```
 
 | text | scope |
 | -- | -- |
 | ``` // ``` | source.ts comment.line.double-slash.ts punctuation.definition.comment.ts |
-| ```  alias for uniqueFilterFnGenerator ``` | source.ts |
+| ```  alias for uniqueFilterFnGenerator ``` | source.ts comment.line.double-slash.ts |
 
 **12:** ```export const uniqueFn = uniqueFilterFnGenerator;```
 
@@ -394,7 +412,15 @@
 | ```   ``` | source.ts meta.function.ts |
 | ``` { ``` | source.ts meta.function.ts meta.block.ts punctuation.definition.block.ts |
 
-**32:** ```    console.log('Hello World.');```
+**32:** ```    // Write something to the console.```
+
+| text | scope |
+| -- | -- |
+| ```      ``` | source.ts meta.function.ts meta.block.ts punctuation.whitespace.comment.leading.ts |
+| ``` // ``` | source.ts meta.function.ts meta.block.ts comment.line.double-slash.ts punctuation.definition.comment.ts |
+| ```  Write something to the console. ``` | source.ts meta.function.ts meta.block.ts comment.line.double-slash.ts |
+
+**33:** ```    console.log('Hello World.');```
 
 | text | scope |
 | -- | -- |
@@ -409,9 +435,30 @@
 | ``` ) ``` | source.ts meta.function.ts meta.block.ts meta.brace.round.ts |
 | ``` ; ``` | source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts |
 
-**33:** *blank line*
+**34:** ```    let a = 2 + greeting.length;  // some random value.```
 
-**34:** ```    const values = [1, 2, 3, 3, 4, 2, 5, 6];```
+| text | scope |
+| -- | -- |
+| ```      ``` | source.ts meta.function.ts meta.block.ts |
+| ``` let ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts storage.type.ts |
+| ```   ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts |
+| ``` a ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.readwrite.ts |
+| ```   ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.var-single-variable.expr.ts |
+| ``` = ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts keyword.operator.assignment.ts |
+| ```   ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts |
+| ``` 2 ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts constant.numeric.decimal.ts |
+| ```   ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts |
+| ``` + ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts keyword.operator.arithmetic.ts |
+| ```   ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts |
+| ``` greeting ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts variable.other.object.ts |
+| ``` . ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts punctuation.accessor.ts |
+| ``` length ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts support.variable.property.ts |
+| ``` ; ``` | source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts |
+| ```    ``` | source.ts meta.function.ts meta.block.ts |
+| ``` // ``` | source.ts meta.function.ts meta.block.ts comment.line.double-slash.ts punctuation.definition.comment.ts |
+| ```  some random value. ``` | source.ts meta.function.ts meta.block.ts comment.line.double-slash.ts |
+
+**35:** ```    const values = [1, 2, 3, 3, 4, a, 5, 6];```
 
 | text | scope |
 | -- | -- |
@@ -438,7 +485,7 @@
 | ``` 4 ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts |
 | ``` , ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts |
 | ```   ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts |
-| ``` 2 ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts |
+| ``` a ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts variable.other.readwrite.ts |
 | ``` , ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts punctuation.separator.comma.ts |
 | ```   ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts |
 | ``` 5 ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts constant.numeric.decimal.ts |
@@ -448,7 +495,7 @@
 | ``` ] ``` | source.ts meta.function.ts meta.block.ts meta.var.expr.ts meta.array.literal.ts meta.brace.square.ts |
 | ``` ; ``` | source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts |
 
-**35:** ```    console.log(values);```
+**36:** ```    console.log(values);```
 
 | text | scope |
 | -- | -- |
@@ -461,7 +508,7 @@
 | ``` ) ``` | source.ts meta.function.ts meta.block.ts meta.brace.round.ts |
 | ``` ; ``` | source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts |
 
-**36:** ```    console.log(unique(values));```
+**37:** ```    console.log(unique(values));```
 
 | text | scope |
 | -- | -- |
@@ -477,15 +524,15 @@
 | ``` ) ``` | source.ts meta.function.ts meta.block.ts meta.brace.round.ts |
 | ``` ; ``` | source.ts meta.function.ts meta.block.ts punctuation.terminator.statement.ts |
 
-**37:** ```}```
+**38:** ```}```
 
 | text | scope |
 | -- | -- |
 | ``` } ``` | source.ts meta.function.ts meta.block.ts punctuation.definition.block.ts |
 
-**38:** *blank line*
+**39:** *blank line*
 
-**39:** ```main();```
+**40:** ```main();```
 
 | text | scope |
 | -- | -- |
@@ -494,5 +541,5 @@
 | ``` ) ``` | source.ts meta.brace.round.ts |
 | ``` ; ``` | source.ts punctuation.terminator.statement.ts |
 
-**40:** *blank line*
+**41:** *blank line*
 

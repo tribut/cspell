@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+// Single line comment.
 /**
  * sample.ts
  * This is a sample `typescript` file for use with the grammar parser.
@@ -7,7 +7,7 @@
  * It will contain a mix of stuff.
  */
 
-
+const greeting = 'Hello World.';
 // alias for uniqueFilterFnGenerator
 export const uniqueFn = uniqueFilterFnGenerator;
 
@@ -29,9 +29,10 @@ export function unique<T>(src: T[]): T[] {
 }
 
 function main() {
+    // Write something to the console.
     console.log('Hello World.');
-
-    const values = [1, 2, 3, 3, 4, 2, 5, 6];
+    let a = 2 + greeting.length;  // some random value.
+    const values = [1, 2, 3, 3, 4, a, 5, 6];
     console.log(values);
     console.log(unique(values));
 }

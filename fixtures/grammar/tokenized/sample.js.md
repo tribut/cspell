@@ -195,7 +195,7 @@
 | text | scope |
 | -- | -- |
 | ``` // ``` | source.js comment.line.double-slash.js punctuation.definition.comment.js |
-| ```  interface InitOptions extends Options {} ``` | source.js |
+| ```  interface InitOptions extends Options {} ``` | source.js comment.line.double-slash.js |
 
 **17:** ```function issueEmitter(issue) {```
 
@@ -253,33 +253,33 @@
 | ``` ( ``` | source.js meta.function.js meta.block.js meta.brace.round.js |
 | ``` ` ``` | source.js meta.function.js meta.block.js string.template.js punctuation.definition.string.template.begin.js |
 | ``` ${ ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.begin.js |
-| ``` chalk_1 ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.function-call.js variable.other.object.js |
-| ``` . ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.function-call.js punctuation.accessor.js |
-| ``` default ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.function-call.js variable.other.object.property.js |
-| ``` . ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.function-call.js punctuation.accessor.js |
-| ``` green ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.function-call.js entity.name.function.js |
-| ``` ( ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.brace.round.js |
-| ``` uri ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js variable.other.readwrite.js |
-| ``` ) ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.brace.round.js |
+| ``` chalk_1 ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.function-call.js variable.other.object.js |
+| ``` . ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.function-call.js punctuation.accessor.js |
+| ``` default ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.function-call.js variable.other.object.property.js |
+| ``` . ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.function-call.js punctuation.accessor.js |
+| ``` green ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.function-call.js entity.name.function.js |
+| ``` ( ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.brace.round.js |
+| ``` uri ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.readwrite.js |
+| ``` ) ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.brace.round.js |
 | ``` } ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.end.js |
 | ``` [ ``` | source.js meta.function.js meta.block.js string.template.js |
 | ``` ${ ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.begin.js |
-| ``` row ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js variable.other.readwrite.js |
+| ``` row ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.readwrite.js |
 | ``` } ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.end.js |
 | ``` ,  ``` | source.js meta.function.js meta.block.js string.template.js |
 | ``` ${ ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.begin.js |
-| ``` col ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js variable.other.readwrite.js |
+| ``` col ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.readwrite.js |
 | ``` } ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.end.js |
 | ``` ]: Unknown word:  ``` | source.js meta.function.js meta.block.js string.template.js |
 | ``` ${ ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.begin.js |
-| ``` chalk_1 ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.function-call.js variable.other.object.js |
-| ``` . ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.function-call.js punctuation.accessor.js |
-| ``` default ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.function-call.js variable.other.object.property.js |
-| ``` . ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.function-call.js punctuation.accessor.js |
-| ``` red ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.function-call.js entity.name.function.js |
-| ``` ( ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.brace.round.js |
-| ``` text ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js variable.other.readwrite.js |
-| ``` ) ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.brace.round.js |
+| ``` chalk_1 ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.function-call.js variable.other.object.js |
+| ``` . ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.function-call.js punctuation.accessor.js |
+| ``` default ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.function-call.js variable.other.object.property.js |
+| ``` . ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.function-call.js punctuation.accessor.js |
+| ``` red ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.function-call.js entity.name.function.js |
+| ``` ( ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.brace.round.js |
+| ``` text ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.readwrite.js |
+| ``` ) ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js meta.brace.round.js |
 | ``` } ``` | source.js meta.function.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.end.js |
 | ``` ` ``` | source.js meta.function.js meta.block.js string.template.js punctuation.definition.string.template.end.js |
 | ``` ) ``` | source.js meta.function.js meta.block.js meta.brace.round.js |
@@ -1397,7 +1397,7 @@
 | ``` ` ``` | source.js meta.arrow.js meta.block.js meta.block.js string.template.js punctuation.definition.string.template.begin.js |
 | ``` Check file:  ``` | source.js meta.arrow.js meta.block.js meta.block.js string.template.js |
 | ``` ${ ``` | source.js meta.arrow.js meta.block.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.begin.js |
-| ``` filename ``` | source.js meta.arrow.js meta.block.js meta.block.js string.template.js meta.template.expression.js variable.other.readwrite.js |
+| ``` filename ``` | source.js meta.arrow.js meta.block.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.readwrite.js |
 | ``` } ``` | source.js meta.arrow.js meta.block.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.end.js |
 | ``` ` ``` | source.js meta.arrow.js meta.block.js meta.block.js string.template.js punctuation.definition.string.template.end.js |
 | ``` ) ``` | source.js meta.arrow.js meta.block.js meta.block.js meta.brace.round.js |
@@ -1619,7 +1619,7 @@
 | ``` ` ``` | source.js meta.arrow.js meta.block.js meta.block.js meta.block.js string.template.js punctuation.definition.string.template.begin.js |
 | ``` Failed to read " ``` | source.js meta.arrow.js meta.block.js meta.block.js meta.block.js string.template.js |
 | ``` ${ ``` | source.js meta.arrow.js meta.block.js meta.block.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.begin.js |
-| ``` filename ``` | source.js meta.arrow.js meta.block.js meta.block.js meta.block.js string.template.js meta.template.expression.js variable.other.readwrite.js |
+| ``` filename ``` | source.js meta.arrow.js meta.block.js meta.block.js meta.block.js string.template.js meta.template.expression.js meta.embedded.line.js variable.other.readwrite.js |
 | ``` } ``` | source.js meta.arrow.js meta.block.js meta.block.js meta.block.js string.template.js meta.template.expression.js punctuation.definition.template-expression.end.js |
 | ``` " ``` | source.js meta.arrow.js meta.block.js meta.block.js meta.block.js string.template.js |
 | ``` ` ``` | source.js meta.arrow.js meta.block.js meta.block.js meta.block.js string.template.js punctuation.definition.string.template.end.js |
@@ -2225,5 +2225,5 @@
 | text | scope |
 | -- | -- |
 | ``` // ``` | source.js comment.line.double-slash.js punctuation.definition.comment.js |
-| ``` # sourceMappingURL=app.js.map ``` | source.js |
+| ``` # sourceMappingURL=app.js.map ``` | source.js comment.line.double-slash.js |
 
