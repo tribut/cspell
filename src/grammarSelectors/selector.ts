@@ -1,4 +1,4 @@
-import { SelectorSetting } from "./selectorsDef";
+import { SelectorSetting } from './selectorsDef';
 
 const scopeSeparator = ' ';
 const selectorSeparator = ',';
