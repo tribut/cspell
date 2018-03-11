@@ -18,6 +18,8 @@ export interface CompareResult {
     actual: string;
 }
 
+export const defaultUpdateFixtures = false;
+
 export function create(fixturesLocation: string = defaultFixturesLocation): FixtureHelper {
 
     const helper: FixtureHelper = {
@@ -27,7 +29,7 @@ export function create(fixturesLocation: string = defaultFixturesLocation): Fixt
         relativeFixturePath,
         resolveFixturePath,
         fixturesLocation,
-        enableWriteBack: false,
+        enableWriteBack: defaultUpdateFixtures,
     };
 
     function relativeFixturePath(...pathParts: string[]) {

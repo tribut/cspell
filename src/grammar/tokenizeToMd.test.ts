@@ -1,10 +1,10 @@
 import { expect } from 'chai';
-import { create } from './fixtures';
+import { create, defaultUpdateFixtures } from './fixtures';
 import { Grammar } from './grammar';
 import * as cacheMap from './cacheMap';
 import { tokenizeFileToMd } from './tokenizeToMd';
 
-const updateFixtures = false;
+const updateFixtures = defaultUpdateFixtures;
 const fixtureHelper = create();
 fixtureHelper.enableWriteBack = updateFixtures;
 
