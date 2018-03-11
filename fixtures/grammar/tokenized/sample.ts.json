@@ -147,7 +147,7 @@
       "tokens": []
     },
     {
-      "line": "const greeting = 'Hello World.';",
+      "line": "const greeting = 'Hello World. Don\\'t worry, be happy.';",
       "lineNumber": 10,
       "tokens": [
         {
@@ -216,7 +216,7 @@
         },
         {
           "startIndex": 18,
-          "endIndex": 30,
+          "endIndex": 34,
           "scopes": [
             "source.ts",
             "meta.var.expr.ts",
@@ -224,8 +224,27 @@
           ]
         },
         {
-          "startIndex": 30,
-          "endIndex": 31,
+          "startIndex": 34,
+          "endIndex": 36,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts",
+            "string.quoted.single.ts",
+            "constant.character.escape.ts"
+          ]
+        },
+        {
+          "startIndex": 36,
+          "endIndex": 54,
+          "scopes": [
+            "source.ts",
+            "meta.var.expr.ts",
+            "string.quoted.single.ts"
+          ]
+        },
+        {
+          "startIndex": 54,
+          "endIndex": 55,
           "scopes": [
             "source.ts",
             "meta.var.expr.ts",
@@ -234,8 +253,8 @@
           ]
         },
         {
-          "startIndex": 31,
-          "endIndex": 32,
+          "startIndex": 55,
+          "endIndex": 56,
           "scopes": [
             "source.ts",
             "punctuation.terminator.statement.ts"

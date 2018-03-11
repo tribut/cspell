@@ -53,7 +53,7 @@
 
 **9:** *blank line*
 
-**10:** ```const greeting = 'Hello World.';```
+**10:** ```const greeting = 'Hello World. Don\'t worry, be happy.';```
 
 | text | scope |
 | -- | -- |
@@ -64,7 +64,9 @@
 | ``` = ``` | source.ts meta.var.expr.ts keyword.operator.assignment.ts |
 | ```   ``` | source.ts meta.var.expr.ts |
 | ``` ' ``` | source.ts meta.var.expr.ts string.quoted.single.ts punctuation.definition.string.begin.ts |
-| ``` Hello World. ``` | source.ts meta.var.expr.ts string.quoted.single.ts |
+| ``` Hello World. Don ``` | source.ts meta.var.expr.ts string.quoted.single.ts |
+| ``` \' ``` | source.ts meta.var.expr.ts string.quoted.single.ts constant.character.escape.ts |
+| ``` t worry, be happy. ``` | source.ts meta.var.expr.ts string.quoted.single.ts |
 | ``` ' ``` | source.ts meta.var.expr.ts string.quoted.single.ts punctuation.definition.string.end.ts |
 | ``` ; ``` | source.ts punctuation.terminator.statement.ts |
 

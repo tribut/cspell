@@ -7,7 +7,7 @@
  * It will contain a mix of stuff.
  */
 
-const greeting = 'Hello World.';
+const greeting = 'Hello World. Don\'t worry, be happy.';
 // alias for uniqueFilterFnGenerator
 export const uniqueFn = uniqueFilterFnGenerator;
 

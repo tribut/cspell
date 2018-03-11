@@ -29,17 +29,20 @@ sample.ts
 
 9 
 
-10 const greeting = 'Hello World.';
-  const          =>  source.ts meta.var.expr.ts storage.type.ts
-                 =>  source.ts meta.var.expr.ts
-  greeting       =>  source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.readwrite.ts
-                 =>  source.ts meta.var.expr.ts meta.var-single-variable.expr.ts
-  =              =>  source.ts meta.var.expr.ts keyword.operator.assignment.ts
-                 =>  source.ts meta.var.expr.ts
-  '              =>  source.ts meta.var.expr.ts string.quoted.single.ts punctuation.definition.string.begin.ts
-  Hello World.   =>  source.ts meta.var.expr.ts string.quoted.single.ts
-  '              =>  source.ts meta.var.expr.ts string.quoted.single.ts punctuation.definition.string.end.ts
-  ;              =>  source.ts punctuation.terminator.statement.ts
+10 const greeting = 'Hello World. Don\'t worry, be happy.';
+  const                =>  source.ts meta.var.expr.ts storage.type.ts
+                       =>  source.ts meta.var.expr.ts
+  greeting             =>  source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts
+                           variable.other.readwrite.ts
+                       =>  source.ts meta.var.expr.ts meta.var-single-variable.expr.ts
+  =                    =>  source.ts meta.var.expr.ts keyword.operator.assignment.ts
+                       =>  source.ts meta.var.expr.ts
+  '                    =>  source.ts meta.var.expr.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+  Hello World. Don     =>  source.ts meta.var.expr.ts string.quoted.single.ts
+  \'                   =>  source.ts meta.var.expr.ts string.quoted.single.ts constant.character.escape.ts
+  t worry, be happy.   =>  source.ts meta.var.expr.ts string.quoted.single.ts
+  '                    =>  source.ts meta.var.expr.ts string.quoted.single.ts punctuation.definition.string.end.ts
+  ;                    =>  source.ts punctuation.terminator.statement.ts
 
 11 // alias for uniqueFilterFnGenerator
   //                                   =>  source.ts comment.line.double-slash.ts punctuation.definition.comment.ts
