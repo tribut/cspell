@@ -1,5 +1,11 @@
 # Release Notes
 
+## [3.x]
+- This is the pre-release of 3.0
+
+### Breaking Changes
+- This release requires Node 8 and above for the lookbehind support in regular expressions.
+
 ## [2.1.7]
 - Add the ability to set the allowed URI schemas when filtering filenames.
 
