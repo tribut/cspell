@@ -129,5 +129,3 @@ export function hasWordCheck(dict: SpellingDictionary, word: string, allowCompou
     // Do not pass allowCompounds down if it is false, that allows for the dictionary to override the value based upon its own settings.
     return allowCompounds ? dict.has(word, allowCompounds) : dict.has(word);
 }
-
-
