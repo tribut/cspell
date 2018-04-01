@@ -8,7 +8,7 @@ const nameSeparator = '.';
 export type Scope = string;
 
 /**
- * Calculate a mating score for the selector against the scope
+ * Calculate a matching score for the selector against the scope
  * @param scope The scope to match against
  * @param selector The css style set of selectors
  * @returns an array representing the match from most detailed to least detailed (child to parent).
